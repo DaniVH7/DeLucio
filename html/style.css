@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    background-color: #F2F6F7;
+}
+
+.seleccion {
+    background-color: #F2F6F7;
+    border: 1px solid red;
+    text-align: center;
+}
+
+.cuadros {
+    display: flex;
+    border: 1px solid blue;
+    flex-direction: row;
+    width: 50%;
+    height: auto;
+}
+.rgt{
+    width: 10%;
+    height: 10%;
+    border:1px solid red;
+    float: right;
+}
