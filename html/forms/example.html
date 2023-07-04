@@ -2,42 +2,33 @@
 <html>
 
 <head>
-    <title>Ejemplo de formulario con preguntas relacionadas</title>
-    <script>
-        function actualizarOpciones() {
-            var materialSeleccionado = document.getElementById("material").value;
-            var birlosSelect = document.getElementById("birlos");
-
-            // Eliminar todas las opciones existentes en el segundo menú desplegable
-            birlosSelect.innerHTML = "";
-
-            // Agregar las nuevas opciones según el material seleccionado
-            if (materialSeleccionado === "Acero") {
-                var opcion1 = document.createElement("option");
-                opcion1.value = "Largo";
-                opcion1.text = "Largo (AC)";
-                birlosSelect.add(opcion1);
-            } else if (materialSeleccionado === "Aluminio") {
-                var opcion2 = document.createElement("option");
-                opcion2.value = "Corto";
-                opcion2.text = "Corto (AL)";
-                birlosSelect.add(opcion2);
-            }
-        }
-    </script>
+    <title>Formulario dividido en dos divs</title>
 </head>
 
 <body>
-    <h1>Formulario con preguntas relacionadas</h1>
+    <div>
+        <h2>Sección 1</h2>
+        <form>
+            <!-- Campos para la sección 1 -->
+            <label for="campo1">Campo 1:</label>
+            <input type="text" id="campo1" name="campo1">
 
-    <label for="material">Material: </label>
-    <select id="material" onchange="actualizarOpciones()">
-        <option value="Acero">Acero</option>
-        <option value="Aluminio">Aluminio</option>
-    </select><br>
+            <label for="campo2">Campo 2:</label>
+            <input type="text" id="campo2" name="campo2">
+        </form>
+    </div>
 
-    <label for="birlos">Birlos: </label>
-    <select id="birlos"></select>
+    <div>
+        <h2>Sección 2</h2>
+        <form>
+            <!-- Campos para la sección 2 -->
+            <label for="campo3">Campo 3:</label>
+            <input type="text" id="campo3" name="campo3">
+
+            <label for="campo4">Campo 4:</label>
+            <input type="text" id="campo4" name="campo4">
+        </form>
+    </div>
 </body>
 
 </html>

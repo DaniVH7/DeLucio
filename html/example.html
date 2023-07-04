@@ -1,19 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="style.css">
-    <title>Document</title>
-</head>
-<script>
+    <title>Formulario dividido en dos divs - Formulario a la derecha</title>
+    <style>
+        /* Estilos para los contenedores div */
+        .container {
+            display: flex;
+            justify-content: space-between;
+        }
 
-</script>
+        /* Estilos para los campos del formulario */
+        .form-container {
+            flex: 1;
+            color: blue;
+        }
+
+        /* Estilos para el segundo div */
+        .info-container {
+            flex: 1;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+    </style>
+</head>
 
 <body>
-    <div class="form1">
-        <form id="formulario1" action="#">
+    <div class="container">
+        <div class="form-container">
+            <h2>Formulario</h2>
             <label>Modelo a elegir: </label>
             <select>
                 <option id="mod01" value="Modelo01" selected="selected">2019</option>
@@ -54,7 +69,11 @@
                 </option>
                 <option id="ojillo06" value="ojillo06">Wallace Forge 0-53-D (3 pulgadas para gancho WFR75)</option>
             </select><br>
+        </div>
 
+        <div class="info-container">
+            <h2>Información adicional</h2>
+            <p>Coloca aquí cualquier información adicional que desees mostrar al lado derecho del formulario.</p>
             <label>Largo de lanza: </label>
             <select>
                 <option id="largo01" value=".60 m">.60 m</option>
@@ -91,75 +110,7 @@
                 <option id="medida01" value="11R22.5"> 11R22.5</option>
                 <option id="medida02" value="11R24.5"> 11R24.5</option>
             </select>
-            <br>
-
-            <label>Rin: </label>
-            <select>
-                <option id="rin01" value="8.25 pulgadas x 24.5 pulgadas">8.25 pulgadas x 24.5 pulgadas</option>
-                <option id="rin02" value="8.25 pulgadas x 22.5 pulgadas">8.25 pulgadas x 22.5 pulgadas</option>
-            </select>
-            <label>Material: </label>
-            <select>
-                <option id="mateiralrin01" value="Acero">Acero</option>
-                <option id="materialrin02" value="Aluminio">Aluminio</option>
-            </select><br>
-    </div>
-    <div class="form2" id="form2">
-        <label>Frenos Neumaticos: </label>
-        <select>
-            <option id="frenos01" value="Sistema ABS-2s1-M de acuerdo a SCT">Sistema ABS-2s1-M de acuerdo a SCT</option>
-        </select><br>
-
-        <!--Inicia el Segundo Lado -->
-
-        <label>Ejes: </label>
-        <select>
-            <option id="ejes01 " value="De 30,000 lbs de capacidad 77.5 pulgadas de Track">De 30,000 lbs de capacidad
-                77.5 pulgadas de Track</option>
-        </select><br>
-
-        <label>Birlos: </label>
-        <select>
-            <option id="birlo01" value="Corto">Corto (AL)</option>
-            <option id="birlo02" value="Largo">Largo (AC)</option>
-        </select>
-
-        <label>Lubricación: </label>
-        <select>
-            <option id="lub01" value="Grasa">Grasa</option>
-            <option id="lub02" value="Aceite">Aceite</option>
-        </select><br>
-
-        <label>suspensión Neumatica: </label>
-        <select>
-            <option id="susp01" value="Azteca King AK-300 de 30,000 lbs de  capacidad">Azteca King AK-3000 de 30,000 lbs
-                de
-                capacidad</option>
-        </select><br>
-
-        <label>PortaPlacas: </label>
-        <select>
-            <option id="placas01" value="Si">Si</option>
-        </select><br>
-
-        <label>Auto inflado: </label>
-        <select>
-            <option id="inflado01" value="Si">Si</option>
-            <option id="inflado02" value="No">No</option>
-        </select><br>
-
-        <label>Porta loderas: </label>
-        <select>
-            <option id="loderas01" value="Si">Si</option>
-            <option id="loderas02" value="No">No</option>
-        </select><br>
-
-        <label>Eje retractil: </label>
-        <select>
-            <option id="retractil01" value="Si">Si</option>si</option>
-            <option id="retractil02" value="No">No</option>
-        </select><br>
-        </form>
+        </div>
     </div>
 </body>
 

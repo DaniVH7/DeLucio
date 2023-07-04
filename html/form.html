@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Formulario dividido en Left y Right</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .left,
+        .right {
+            border: 1px solid black;
+            width: 50%;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="left">
+            <h2>Left</h2>
+            <form>
+                <!-- Campos para el lado izquierdo del formulario -->
+                <label for="campo1">Campo 1:</label>
+                <input type="text" id="campo1" name="campo1">
+
+                <label for="campo2">Campo 2:</label>
+                <input type="text" id="campo2" name="campo2">
+            </form>
+        </div>
+
+        <div class="right">
+            <h2>Right</h2>
+            <form>
+                <!-- Campos para el lado derecho del formulario -->
+                <label for="campo3">Campo 3:</label>
+                <input type="text" id="campo3" name="campo3">
+
+                <label for="campo4">Campo 4:</label>
+                <input type="text" id="campo4" name="campo4">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

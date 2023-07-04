@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<head>
+    <title>Form Delucio</title>
+</head>
+
+<body>
+    <div class="escoge">
+        <h1>Selecciona un formulario:</h1>
+        <select id="selectFormulario">
+            <option value="opcion0" selected="selected">Equipos
+            </option>
+            <option value="opcion01">Dolly Tipo A
+            </option>
+            <option value="opcion02">Portaco ntenedor 40ft Estandar</option>
+            <option value="opcion03">Portacontenedor 40ft extensible
+            </option>
+            <option value="opcion04">Plataforma Tipo plana
+            </option>
+            <option value="opcion05">Plataforma multimodal
+            </option>
+            <option value="opcion06">Volteo tipo Gondola</option>
+            <option value="opcion07">Portacontenedor 24ft</option>
+            <option value="opcion08">Tolva presurizada </option>
+            <option value="opcion09">Caja Seca </option>
+            <!-- Fin de las Opciones-->
+        </select>
+    </div>
+
+    <div class="form-container" id="opcion0">
+    </div>
+
+    <div class="container">
+        <div class="form-container" id="opcion01">
+
+            <form action="php/dolly.php" method="post">
+                <!-- Campos para el formulario 1 -->
+                <label for="modelo">Modelo a elegir: </label>
+                <select name="modelo">
+                    <option name="modelo" value="2019">2019</option>
+                    <option name="modelo" value="2020">2020</option>
+                    <option name="modelo" value="2021">2021</option>
+                    <option name="modelo" value="2022">2022</option>
+                    <option name="modelo" value="2023">2023</option>
+                    <option name="modelo" value="2024" selected="selected">2024</option>
+                </select><br>
+
+                <label for="alto">Alto: </label>
+                <select name="alto">
+                    <option name="alto" value="Fijo">Fijo</option>
+                </select><br>
+
+                <label for="ancho">Ancho: </label>
+                <select name="ancho">
+                    <option name="ancho" value="2.60m">2.60m</option>
+                </select><br>
+
+                <label for="largo">Largo: </label>
+                <select name="largo">
+                    <option name="largo" value="2.47m">2.47m</option>
+                </select><br>
+
+                <label for="ojillo">Ojillo Tiron:</label>
+                <select name="ojillo">
+                    <option name="ojillo" value="Premier 245 DB (2 3/8 pulgadas para gancho Premier 2400)">Premier 245
+                        DB (2 3/8 pulgadas para gancho Premier 2400)
+                    </option>
+                    <option name="ojillo" value="Premier 245 DB-3 (3 pulgadas para gancho Premier 880/2880)">Premier 245
+                        DB-3 (3 pulgadas para gancho Premier 880/2880)
+                    </option>
+                    <option name="ojillo" value=">Premier 207 (giratorio de 2 3/8 pulgadas para gancho Premier2400)">
+                        Premier 207 (giratorio de 2 3/8 pulgadas para gancho premier 2400)
+                    </option>
+                    <option name="ojillo" value="Premier 307(giratorio de 3 pulgadas para gancho Premier 880/2880)">
+                        Premier 307(giratorio de 3 pulgadas para gancho Premier
+                        880/2880)
+                    </option>
+                    <option name="ojillo" value="Wallace Forge 0-42-D (2 3/8 pulgadas para gancho WF R50)">Wallace Forge
+                        0-42-D (2 3/8 pulgadas para gancho WF R50)
+                    </option>
+                    <option name="ojillo" value="Wallace Forge 0-53-D (3 pulgadas para gancho WFR75)">Wallace Forge
+                        0-53-D (3 pulgadas para gancho WFR75)
+                    </option>
+                </select><br>
+
+                <label for="lanza">Largo de lanza: </label>
+                <select name="lanza">
+                    <option name="lanza" value=".60 m">.60 m</option>
+                    <option name="lanza" value=".70 m">.70 m</option>
+                    <option name="lanza" value=".80 m">.80 m</option>
+                    <option name="lanza" value=".90 m">.90 m</option>
+                    <option name="lanza" value="1.00 m">1.00 m</option>
+                    <option name="lanza" value="1.10 m">1.10 m</option>
+                </select><br>
+
+                <label for="quinta">Quinta Rueda:</label>
+                <select name="quinta">
+                    <option name="quinta" value="Holland FW35">Holland FW35</option>
+                    <option name="quinta" value="JOST JSK37">JOST JSK37</option>
+                </select><br>
+
+                <label for="alturaquinta">Altura de Quinta Rueda:</label>
+                <select name="alturaquinta">
+                    <option name="alturaquinta" value="6 Pulgadas">6 Pulgadas</option>
+                    <option name="alturaquinta" value="8 Pulgadas">8 Pulgadas</option>
+                </select><br>
+
+                <label for="sopquinta">Soporte de Quinta Rueda:</label>
+                <select name="sopquinta">
+                    <option name="sopquinta" value="Fijo">Fijo</option>
+                </select><br>
+
+                <label for="llantas">Llantas: </label>
+                <select name="llantas">
+                    <option name="llantas" value="8">8</option>
+                </select>
+
+                <label for="medida">Medida: </label>
+                <select name="medida">
+                    <option name="medida" value="11R22.5"> 11R22.5</option>
+                    <option name="medida" value="11R24.5"> 11R24.5</option>
+                </select>
+                <br>
+
+                <label for="rin">Rin: </label>
+                <select name="rin">
+                    <option name="rin" value="8.25 pulgadas x 24.5 pulgadas">8.25 pulgadas x 24.5 pulgadas</option>
+                    <option name="rin" value="8.25 pulgadas x 22.5 pulgadas">8.25 pulgadas x 22.5 pulgadas</option>
+                </select>
+
+                <label for="material">Material: </label>
+                <select name="material">
+                    <option name="mateiral" value="Acero">Acero</option>
+                    <option name="material" value="Aluminio">Aluminio</option>
+                </select>
+        </div>
+
+        <div class="imagen" id=" opcion0">
+            <img src=" src/img/Logotipo delucio.png" width="100%" height="100%">
+        </div>
+        <!-- Formulario 1 Dolly-->
+        <div class="form-container" id="opcion01">
+
+            <label for="frenos">Frenos Neumaticos: </label>
+            <select name="frenos">
+                <option name="frenos" value="Sistema ABS-2s1-M de acuerdo a SCT">Sistema ABS-2s1-M de acuerdo a SCT
+                </option>
+            </select><br>
+
+            <!--Inicia el Segundo Lado -->
+
+            <label for="ejes">Ejes: </label>
+            <select name="ejes">
+                <option name="ejes " value="De 30,000 lbs de capacidad 77.5 pulgadas de Track">De 30,000 lbs de
+                    capacidad
+                    77.5 pulgadas de Track</option>
+            </select><br>
+
+            <label for="birlos">Birlos: </label>
+            <select name="Birlos">
+                <option name="birlos" value="Corto">Corto (AL)</option>
+                <option name="birlos" value="Largo">Largo (AC)</option>
+            </select>
+
+            <label for="lubricacion">Lubricación: </label>
+            <select name="lubricacion">
+                <option name="lubricacion" value="Grasa">Grasa</option>
+                <option name="lubricacion" value="Aceite">Aceite</option>
+            </select><br>
+
+            <label for="suspension">suspensión Neumatica: </label>
+            <select name="suspension">
+                <option name="suspension" value="Azteca King AK-300 de 30,000 lbs de  capacidad">Azteca King AK-3000 de
+                    30,000 lbs
+                    de
+                    capacidad</option>
+            </select><br>
+
+            <label for="placas">PortaPlacas: </label>
+            <select name="placas">
+                <option name="placas" value="Si">Si</option>
+            </select><br>
+
+            <label for="inflado">Auto inflado: </label>
+            <select name="inflado">
+                <option name="inflado" value="Si">Si</option>
+                <option name="inflado" value="No">No</option>
+            </select><br>
+
+            <label for="loderas">Porta loderas: </label>
+            <select name="loderas">
+                <option name="loderas" value="Si">Si</option>
+                <option name="loderas" value="No">No</option>
+            </select><br>
+
+            <label for="retractil">Eje retractil: </label>
+            <select name="retractil">
+                <option name="retractil" value="Si">Si</option>
+                <option name="retractil" value="No">No</option>
+            </select><br>
+            </form>
+        </div>
+        <div class="form-container" id="opcion01">
+            <input type="submit" class="btn" id="enviar" value="GUARDAR">&nbsp;
+            <input type="reset" class="btn" id="borrar" value="limpiar">
+        </div>
+    </div>
+
+
+    <!-- Formulario 2 -->
+    <div class="form-container" id="opcion02">
+        <h2>Formulario 2</h2>
+        <form>
+            <table>
+                <tr>
+                    <td><label>name:</label></td>
+                    <td>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label>name:</label></td>
+                    <td>
+                        <select>
+                            <option>1</option>
+                            <option>2</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+    <script>
+        // Obtener el elemento select y los formularios
+        const selectFormulario = document.getElementById('selectFormulario');
+        const formularios = document.querySelectorAll('.form-container');
+
+        // Mostrar el formulario seleccionado cuando cambie el valor del select
+        selectFormulario.addEventListener('change', function () {
+            const formularioSeleccionado = selectFormulario.value;
+            formularios.forEach(form => {
+                form.classList.remove('active');
+                if (form.id === formularioSeleccionado) {
+                    form.classList.add('active');
+                }
+            });
+        });
+
+        // Mostrar el formulario inicial al cargar la página
+        formularios[0].classList.add('active');
+    </script>
+</body>
+
+</html>
