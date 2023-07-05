@@ -4,46 +4,134 @@
 <head>
     <title>Formulario dividido en Left y Right</title>
     <style>
-        .container {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .left,
-        .right {
+        table,
+        td,
+        tr {
             border: 1px solid black;
-            width: 50%;
+            width: auto;
             padding: 20px;
         }
     </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="left">
-            <h2>Left</h2>
-            <form>
-                <!-- Campos para el lado izquierdo del formulario -->
-                <label for="campo1">Campo 1:</label>
-                <input type="text" id="campo1" name="campo1">
+    <table>
+        <td><label>Modelo:</label></td>
+        <td><select>
+                <option>2019</option>
+                <option>2020</option>
+                <option>2021</option>
+                <option>2022</option>
+                <option>2023</option>
+                <option>2024</option>
+            </select>
+        </td>
+        <td rowspan="15"><img src="src/img/Logotipo delucio.png" width="20%" height="30%"></td>
+        <td>1</td>
+        <td>1</td>
+        <tr <tr>
+            <td><label>Configuracion:</label></td>
+            <td><select>
+                    <option>40</option>
+                    <option>40-20</option>
+                    <option>40-20-20</option>
+                </select></td>
+            <td>2</td>
+            <td>2</td>
+        </tr>>
+        <td><label>Color:</label></td>
+        <td><input></td>
+        <td>3</td>
+        <td>3</td>
+        </tr>
+        <tr>
+            <td><label>Cabezal frontal:</label></td>
+            <td><select>
+                    <option>Con 1 par de seguros tipo pin-lock de 1 pulgada de diámetro</option>
+                    <option>: Con 1 par de seguros tipo pin-lock de 1 pulgada de diámetro</option>
+                    <option>Con 2 pares de seguros tipo pin-lock de 1 pulgada de diámetro</option>
+                </select></td>
+            <td>4</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td><label>Cabezal trasero:</label></td>
+            <td><select>
+                    <option>Con 1 par de candados fijos tipo twist lock</option>
+                    <option>Con 1 par de candados fijos tipo twist lock</option>
+                    <option>Con 1 par de candados fijos tipo twist lock</option>
+                </select></td>
+            <td>5</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td><label>Mensulas:</label></td>
+            <td>
+                <select>
+                    <option>N/A</option>
+                    <option>1 par de mensulas centrales fijas, con un twist lock cada una</option>
+                    <option>1 par de mensulas centrales fijas, 1 par de mensulas centrales retractiles, con un
+                        twist lock cada una</option>
+                </select>
+            </td>
+            <td>6</td>
+            <td>6</td>
 
-                <label for="campo2">Campo 2:</label>
-                <input type="text" id="campo2" name="campo2">
-            </form>
-        </div>
-
-        <div class="right">
-            <h2>Right</h2>
-            <form>
-                <!-- Campos para el lado derecho del formulario -->
-                <label for="campo3">Campo 3:</label>
-                <input type="text" id="campo3" name="campo3">
-
-                <label for="campo4">Campo 4:</label>
-                <input type="text" id="campo4" name="campo4">
-            </form>
-        </div>
-    </div>
+        </tr>
+        <tr>
+            <td><label>Llantas: </label></td>
+            <td>
+                <select>
+                    <option>8</option>
+                </select>
+            </td>
+            <td>7</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td><label>Rin:</label></td>
+            <td>
+                <select>
+                    <option>8</option>
+                </select>
+            </td>
+            <td>8</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td><label>Patines de Estacionamiento:</label></td>
+            <td>
+                <select>
+                    <option>1 juego de patines</option>
+                </select>
+            </td>
+            <td>9</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td><label>Placa gancho de arrastre:</label></td>
+            <td>
+                <select>
+                    <option>Colocar placa sin gancho de arrastre</option>
+                    <option>Premier 2400(2 pulgadas 10 barrenos)
+                    </option>
+                    <option>Premier 2400(2 pulgadas 10 barrenos)
+                    </option>
+                    <option>Premier 2880 (3 pulgadas 6 barrenos)
+                    </option>
+                    <option>Wallace Forge R50-10 (2 pulgadas 10 barrenos)
+                    </option>
+                </select> </td>
+            <td>10</td>
+            <td>10</td>
+        </tr>
+        <tr>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+            <td>11</td>
+        </tr>
+    </table>
 </body>
 
 </html>
