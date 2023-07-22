@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<head>
+</head>
+<body>
+    <div class="container">
+        <!-- Formulario 1 Dolly-->
+        <div class="form-container" id="opcion01">
+            <form action="../php/precios.php" method="post">
+                <table>
+                    <tr>
+                        <td><label>Modelo:</label></td>
+                        <td>
+                            <select name="modelo">
+                                <option></option>
+                                <option value="2019">2019</option>
+                                <option value="2020">2020</option>
+                                <option value="2021">2021</option>
+                                <option value="2022">2022</option>
+                                <option value="2023">2023</option>
+                                <option value="2024">2024</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Alto:</label></td>
+                        <td>
+                            <select name="alto">
+                                <option></option>
+                                <option value="Fijo">Fijo</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Ojillo tiron:</label></td>
+                        <td>
+                            <select name="ojillo_tiron" style="width: 389px;">
+                                <option></option>
+                                <option value="Premier 245 DB (2 3/8 pulgadas para gancho Premier 2400)">Premier 245 DB (2 3/8 pulgadas para gancho Premier 2400)</option>
+                                <option value="Premier 245 DB-3 (3 pulgadas para gancho Premier 880/2880)">Premier 245 DB-3 (3 pulgadas para gancho Premier 880/2880)</option>
+                                <option value="Premier 207 (giratorio de 2 3/8 pulgadas para gancho premier 2400)">Premier 207 (giratorio de 2 3/8 pulgadas para gancho premier 2400)</option>
+                                <option value="Premier 307  (giratorio de 3 pulgadas para gancho Premier 880/2880)">Premier 307(giratorio de 3 pulgadas para gancho Premier 880/2880)</option>
+                                <option value="Wallace Forge 0-42-D (2 3/8 pulgadas para gancho WF R50)">Wallace Forge 0-42-D (2 3/8 pulgadas para gancho WF R50)</option>
+                                <option value="Wallace Forge 0-53-D (3 pulgadas para gancho WFR75)">Wallace Forge 0-53-D (3 pulgadas para gancho WFR75)</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Largo de lanza:</label></td>
+                        <td>
+                            <select name="largo_lanza">
+                                <option></option>
+                                <option value=".60 m">.60 m</option>
+                                <option value=".70 m">.70 m</option>
+                                <option value=".80 m">.80 m</option>
+                                <option value=".90 m">.90 m</option>
+                                <option value="1.00 m">1.00 m</option>
+                                <option value="1.10 m">1.10 m</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Material:</label></td>
+                        <td>
+                            <select name="material_rin">
+                                <option></option>
+                                <option value="Acero">Acero</option>
+                                <option value="Aluminio">Aluminio</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Altura de Quinta rueda:</label></td>
+                        <td>
+                            <select name="altura_quinta">
+                                <option></option>
+                                <option value="6 pulgadas">6 Pulgadas</option>
+                                <option value="8 pulgadas">8 Pulgadas</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label>Precio:</label></td>
+                        <td><input type="number" name="precio" step="0.01" required></td>
+                    </tr>
+                    
+                    <tr>
+                        <td></td>
+                        <td>
+                            <input type="submit" value="Enviar este formulario" />
+                        </td>
+                    </tr>
+                    
+                </table>
+            </form>
+        </div>
+    </div><br>
+
+</body>
+<style>
+
+</style>
+</html>

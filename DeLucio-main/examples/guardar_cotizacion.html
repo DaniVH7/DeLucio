@@ -1,0 +1,39 @@
+<?php
+$servername = "tu_servidor";
+$username = "tu_usuario";
+$password = "tu_contraseña";
+$dbname = "tu_base_de_datos";
+
+try {
+  $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+  $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+  $producto1 = $_POST['producto1'];
+  $producto2 = $_POST['producto2'];
+  $total = $_POST['total'];
+
+  $stmt = $conn->prepare("INSERT INTO cotizaciones (producto, precio) VALUES (:producto, :precio)");
+  $stmt->bindParam(':producto', $producto);
+  $stmt->bindParam(':precio', $precio);
+
+  // Insertar producto 1
+  $producto = "Producto 1";
+  $precio = $producto1;
+  $stmt->execute();
+
+  // Insertar producto 2
+  $producto = "Producto 2";
+  $precio = $producto2;
+  $stmt->execute();
+
+  // Insertar total
+  $producto = "Total";
+  $precio = $total;
+  $stmt->execute();
+
+  echo "Cotización guardada correctamente";
+} catch(PDOException $e) {
+  echo "Error: " . $e->getMessage();
+}
+$conn = null;
+?>

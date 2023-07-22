@@ -1,0 +1,30 @@
+.escoge {
+    text-align: center;
+}
+.imagen {
+  width: 20%;
+  height: 300px;
+}
+
+/* Estilos para ocultar los formularios excepto el seleccionado */
+.form-container {
+    display: none;
+    flex-direction: column;
+    width: 40%;
+}
+
+.form-container.active {
+    display: block;
+    color: #004BA9;
+    font-size: 22px;
+}
+.option.active{
+  background-color: red;
+}
+.container{
+  display: flex;
+  flex-direction: row;
+}
+tr, table{
+  margin: auto;
+}

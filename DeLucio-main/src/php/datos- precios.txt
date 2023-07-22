@@ -1,0 +1,51 @@
+$modelo = (int)$_POST["modelo"];
+    $alto = htmlspecialchars($_POST["alto"]);
+    $ancho = (int)($_POST["ancho"]);
+    $largo = (int)($_POST["largo"]);
+    $ojillo = htmlspecialchars($_POST["ojillo_tiron"]);
+    $lanza = htmlspecialchars($_POST["largo_lanza"]);
+    $quintarueda = htmlspecialchars($_POST["quinta_rueda"]);
+    $alturaquinta = htmlspecialchars($_POST["altura_quinta"]);
+    $sopquinta = htmlspecialchars($_POST["soporte_quinta"]);
+    $llantas = htmlspecialchars($_POST["llantas"]);
+    $medida = htmlspecialchars($_POST["llanta_medida"]);
+    $rin = htmlspecialchars($_POST["rin"]);
+    $rin_medida = htmlspecialchars($_POST["rin_medida"]);
+    $material = htmlspecialchars($_POST["material_rin"]);
+    $ejes = htmlspecialchars($_POST["ejes"]);
+    $birlos = htmlspecialchars($_POST["birlo"]);
+    $lubricacion = htmlspecialchars($_POST["lubricacion"]);
+    $suspension = htmlspecialchars($_POST["susp_neumatica"]);
+    $portaplacas = htmlspecialchars($_POST["porta_placas"]);
+    $inflado = htmlspecialchars($_POST["auto_inflado"]);
+    $loderas = htmlspecialchars($_POST["porta_loderas"]);
+    $retractil = htmlspecialchars($_POST["eje_retractil"]);
+    $precioTotal = htmlspecialchars($_POST["precio"]);
+
+
+
+
+
+    $modelo = (int)$_POST["modelo"];
+    $alto = htmlspecialchars($_POST["alto"]);
+    $ancho = (int)($_POST["ancho"]);
+    $largo = (int)($_POST["largo"]);
+    $ojillo = htmlspecialchars($_POST["ojillo_tiron"]);
+    $lanza = htmlspecialchars($_POST["largo_lanza"]);
+    $quintarueda = htmlspecialchars($_POST["quinta_rueda"]);
+    $alturaquinta = htmlspecialchars($_POST["altura_quinta"]);
+    $sopquinta = htmlspecialchars($_POST["soporte_quinta"]);
+    $llantas = htmlspecialchars($_POST["llantas"]);
+    $medida = htmlspecialchars($_POST["llanta_medida"]);
+    $rin = htmlspecialchars($_POST["rin"]);
+    $rin_medida = htmlspecialchars($_POST["rin_medida"]);
+    $material = htmlspecialchars($_POST["material_rin"]);
+    $ejes = htmlspecialchars($_POST["ejes"]);
+    $birlos = htmlspecialchars($_POST["birlo"]);
+    $lubricacion = htmlspecialchars($_POST["lubricacion"]);
+    $suspension = htmlspecialchars($_POST["susp_neumatica"]);
+    $portaplacas = htmlspecialchars($_POST["porta_placas"]);
+    $inflado = htmlspecialchars($_POST["auto_inflado"]);
+    $loderas = htmlspecialchars($_POST["porta_loderas"]);
+    $retractil = htmlspecialchars($_POST["eje_retractil"]);
+    $precioTotal = htmlspecialchars($_POST["precio"]);

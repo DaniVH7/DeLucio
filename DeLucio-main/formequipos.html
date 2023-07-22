@@ -1,0 +1,236 @@
+<table>
+    <td><a>Modelo: </a></td>
+    <td>
+    <select name="modelo" id="modeloSelect">
+        <option></option>
+        <option value="2019">2019</option>
+        <option value="2020">2020</option>
+        <option value="2021">2021</option>
+        <option value="2022">2022</option>
+        <option value="2023">2023</option>
+        <option value="2024">2024</option>
+    </select>
+    </td>
+    <td rowspan="10"><img src="src/img/Equipos/dolly.png" width="600" height="600"></td>
+    <td><a id="material-rin">Material: </a></td>
+    <td>
+        <select name="material_rin" id="material" onchange="actualizarBirlo()">
+            <option></option>
+            <option value="Acero">Acero</option>
+            <option value="Aluminio">Aluminio</option>
+        </select>
+    </td>
+    <script>
+        // Obtén una referencia al enlace y al select
+        const material = document.getElementById('material');
+    const modeloSelect = document.getElementById('modeloSelect');
+
+    // Asigna un evento de escucha al enlace
+    material.addEventListener('click', function(event) {
+    event.preventDefault(); // Evita que se siga el enlace
+
+    // Obtén el valor seleccionado del select
+    const selectedModelo = modeloSelect.value;
+
+    // Muestra la alerta cuando se haga clic en el enlace
+    Swal.fire({
+    title: 'Material de Rin',
+    text: `Accesorio Selecionado:`,
+    imageUrl: 'https://unsplash.it/400/200',
+    imageWidth: 400,
+    imageHeight: 200,
+    imageAlt: 'Custom image',
+    });
+    });
+    </script>
+    <tr>
+    </tr>
+    <td><a>Color: </a>
+    </td>
+    <td><input>
+    </td>
+    <td><a>Birlo: </a></td>
+    <td>
+        <select name="birlo" id="birlo"></select>
+        <option></option>
+    </td>
+
+    </tr>
+    <tr>
+        <td><a>Cabezal Frontal: </a></td>
+        <td><select name="largo">
+                <option></option>
+                <option value="Con 1 par de seguros tipo Pin lock de 1 pulgada de diametro">Con 1 par de seguros tipo Pin lock de 1 pulgada de diametro</option>
+
+
+            </select></td>
+        <td><a>Ejes:</a></td>
+        <td><select name="ejes">
+                <option></option>
+                    <option value="De 30,000 lbs, 77.5 pulgadas de Track">De 30,000 lbs, 77.5 pulgadas
+                        de Track</option>
+            </select> </td>
+
+    </tr>
+    <tr>
+        <td><a>Cabezal Trasero: </a></td>
+        <td><select name="piso">
+                <option></option>
+                <option value="Con 1 par de mensulas centrales, fijas con 1 twist ">Con 1 par de mensulas centrales, fijas con 1 twist </option>
+            </select></td>
+        <td><a>Lubricación: </a></td>
+        <td><select name="lubricacion">
+                <option></option>
+
+                <option value="Grasa">Grasa</option>
+                <option value="Aceite">Aceite</option>
+            </select> </td>
+
+
+    </tr>
+    <tr>
+        <td><a>Ojillo tiron: </a></td>
+        <td>
+            <select name="ojillo_tiron" style="width: 389px;">
+                <option></option>
+
+                <option value="Premier 245 DB (2 3/8 pulgadas para gancho Premier 2400)"
+                    data-precio=" 20">Premier 245 DB (2 3/8 pulgadas para gancho Premier 2400)</option>
+                <option value="Premier 245 DB-3 (3 pulgadas para gancho Premier 880/2880)"
+                    data-precio="30">Premier 245 DB-3 (3 pulgadas para gancho Premier 880/2880)</option>
+                <option value="Premier 207 (giratorio de 2 3/8 pulgadas para gancho premier 2400)"
+                    data-precio="40">Premier 207 (giratorio de 2 3/8 pulgadas para gancho premier 2400)
+                </option>
+                <option value="Premier 307(giratorio de 3 pulgadas para gancho Premier 880/2880)"
+                    data-precio="50">Premier 307(giratorio de 3 pulgadas para gancho Premier 880/2880)
+                </option>
+                <option value="Wallace Forge 0-42-D (2 3/8 pulgadas para gancho WF R50)"
+                    data-precio="60">Wallace Forge 0-42-D (2 3/8 pulgadas para gancho WF R50)</option>
+                <option value="Wallace Forge 0-53-D (3 pulgadas para gancho WFR75)" data-precio="70">
+                    Wallace Forge 0-53-D (3 pulgadas para gancho WFR75)</option>
+            </select>
+        </td>
+        <td><a>Suspension neumatica: </a></td>
+        <td><select name="susp_neumatica">
+                <option></option>
+
+                <option value="Azteca King Ak-300 de 30,000 lbs de capacidad">Azteca King Ak-300 de
+                    30,000 lbs de capacidad</option>
+            </select></td>
+
+
+    </tr>
+    <tr>
+        <td><a>Largo de lanza: </a></td>
+        <td>
+            <select name="largo_lanza">
+                <option></option>
+
+                <option value=".60 m">.60 m</option>
+                <option value=".70 m">.70 m</option>
+                <option value=".80 m">.80 m</option>
+                <option value=".90 m">.90 m</option>
+                <option value="1.00 m">1.00 m</option>
+                <option value="1.10 m">1.10 m</option>
+            </select>
+        </td>
+        <td><a>Portaplacas: </a></td>
+        <td>
+            <select name="porta_placas">
+                <option></option>
+
+                <option value="Si">Si</option>
+            </select>
+        </td>
+
+
+    </tr>
+    <tr>
+        <td><a>Quinta rueda: </a></td>
+        <td>
+            <select name="quinta_rueda">
+                <option></option>
+
+                <option value="Holland FW35">Holland FW35</option>
+            </select>
+        </td>
+        <td><a>Auto inflado: </a></td>
+        <td>
+            <select name="auto_inflado">
+                <option></option>
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select>
+        </td>
+
+    </tr>
+    <tr>
+        <td><a>Altura de Quinta rueda: </a></td>
+        <td>
+            <select name="altura_quinta">
+                <option></option>
+
+                <option value="6 pulgadas">6 Pulgadas</option>
+                <option value="8 pulgadas">8 Pulgadas</option>
+            </select>
+        </td>
+        <td><a>Porta loderas: </a></td>
+        <td><select name="porta_loderas">
+                <option></option>
+
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select></td>
+        </td>
+    </tr>
+    <tr>
+        <td><a>Soporte de quinta rueda: </a></td>
+        <td><select name="soporte_quinta">
+                <option></option>
+
+                <option value="Fijo">Fijo</option>
+            </select></td>
+        <td><a>Eje retractil: </a></td>
+        <td><select name="eje_retractil">
+                <option></option>
+
+                <option value="Si">Si</option>
+                <option value="No">No</option>
+            </select></td>
+        </td>
+    </tr>
+    <tr>
+        <td><a>Llantas: </a></td>
+        <td><select name="llantas" id="llantas" onchange="actualizarRin()">
+            <option></option>
+            <option value="8">8</option>
+          </select>
+          
+          <a>Medida llanta</a>
+          <select name="llanta_medida" id="llanta_medida" onchange="actualizarMedida()">
+              <option></option>
+              <option>11R22.5</option>
+              <option>11R24.5</option>
+          </select>
+        </td>
+        </td>
+
+    </tr>
+    <tr>
+        <td><a>Rin: </a></td>
+        <td><select name="rin" id="rin">
+            <option></option>
+            </select>
+
+
+                                    
+            <a>Medida rin</a>
+            <select name="rin_medida" id="rin_medida"></select>
+        </td>
+        </td>
+        <td>
+            <input type="submit" value="Enviar este formulario" />
+        </td>
+    </tr>
+
+</table>
