@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma Multimodal</title>
+</head>
+<script src="../src/js/scriptsmultimodal.js"></script>
+<script>
+    function abrirArchivo() {
+        // Obtener el elemento select
+        const selectElement = document.getElementById("selectFormulario");
+
+        // Obtener el valor seleccionado
+        const selectedValue = selectElement.value;
+
+        // Redirigir a la ruta del archivo seleccionado
+        window.location.href = selectedValue;
+    }
+</script>
+
+<body>
+    <div class="escoge">
+        <h1>Selecciona un formulario:</h1>
+        <select id="selectFormulario" onchange="abrirArchivo()">
+            <option value="../index.html">Equipos</option>
+            <option value="dolly.html">Dolly Tipo A</option>
+            <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
+            <option value="portaExtensible.html">Portacontenedor 40ft extensible</option>
+            <option value="plana.html">Plataforma Tipo plana</option>
+            <option value="multimodal.html" selected="selected">Plataforma multimodal</option>
+            <option value="gondola.html">Volteo tipo Gondola</option>
+            <option value="porta24.html">Portacontenedor 24ft</option>
+            <option value="tolva.html">Tolva presurizada</option>
+            <option value="cajaseca.html">Caja Seca</option>
+        </select>
+    </div>
+    <div class="form-container" id="opcion05">
+        <form action="../src/php/multimodal.php" method="post">
+            <table>
+                <td><a>Modelo: </a></td>
+                <td><select name="modelo">
+                        <option></option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </td>
+                <td rowspan="11"><img src="../src/img/Equipos/multimodal.jpg" alt="Plataforma Multimodal" width="600"
+                        height="600"></td>
+                <td><a>Perno rey: </a></td>
+                <td><select name="perno_rey">
+                        <option></option>
+                        <option value="Wallace Forge de 3/8">Wallace Forge de 3/8</option>
+                    </select> </td>
+                <tr>
+                </tr>
+                <td><a>Color: </a>
+                </td>
+                <td><input name="color"></td>
+                <td>
+                    <a>Manivelas: </a>
+                </td>
+                <td>
+                    <select name="manivelas">
+                        <option></option>
+                        <option value="Lado piloto">Lado piloto</option>
+                        <option value="Lado copiloto">Lado copiloto</option>
+                    </select>
+
+                </td>
+                </tr>
+                <tr>
+                    <td><a>Cabezal frontal: </a></td>
+                    <td><select name="cabezal_frontal" style="width: 378px;">
+                            <option></option>
+                            <option value="Con 1 par de seguros tipo pin-lock de 1 pulgada de diámetro">Con 1 par de
+                                seguros tipo pin-lock de 1 pulgada de diámetro
+                            </option>
+
+                        </select></td>
+                    <td><a>Porta llantas: </a></td>
+                    <td><select name="porta_llantas">
+                            <option></option>
+                            <option value="Si">Si</option>
+
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><a>Cabezal trasero: </a></td>
+                    <td><select name="cabezal_trasero" style="width: 310px;">
+                            <option></option>
+                            <option value="Con 1 par de ménsulas centrales fijas, con 1 twist lock retráctil cada una">
+                                Con 1 par de ménsulas centrales fijas, con 1 twist lock retráctil cada una
+                            </option>
+
+                        </select></td>
+                    <td><a>Caja de herramientas: </a></td>
+                    <td><select name="caja_herramientas">
+                            <option></option>
+                            <option value="Interior">Interior</option>
+                            <option value="Entre vigas">Entre vigas</option>
+                        </select></td>
+
+                </tr>
+                <tr>
+                    <td><a>Piso: </a></td>
+                    <td>
+                        <select name="piso">
+                            <option></option>
+                            <option value="Canaleta antiderrapante C-10">Canaleta antiderrapante C-10
+                            </option>
+                            <option value="Plasti tabla C-10">Plasti tabla C-10
+                            </option>
+                            <option value="Piso de Cumahuayo de primera en 11/4">Piso de Cumahuayo de primera en 11/4
+                            </option>
+                            <option value="Piso de pino de primero 11/4:C-12 y antiderrapante">Piso de pino de primero
+                                11/4: C-12 y antiderrapante
+                            </option>
+                            <option value="Lamina antiderrapante C-12">Lamina antiderrapante C-12
+                            </option>
+
+                        </select>
+                    </td>
+                    <td><a>Suspension neumatica: </a></td>
+                    <td>
+                        <select name="susp_neu" style="width: 315px;">
+                            <option></option>
+                            <option value="Azteca King Ak-300 de 30,000 lbs de capacidad">Azteca King Ak-300 de 30,000
+                                lbs de capacidad</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a>Mensulas centrales: </a></td>
+                    <td>
+                        <select name="mensulas_centrales">
+                            <option></option>
+                            <option value="Si">Si</option>
+                        </select>
+                    </td>
+
+                    <td><a>Ejes: </a></td>
+                    <td><select name="ejes">
+                            <option></option>
+                            <option value="De 30,000 lbscon 77.5 pulgadas de track">De 30,000 lbscon 77.5 pulgadas de
+                                track</option>
+                        </select> </td>
+                </tr>
+                <tr>
+                    <td><a>Llantas: </a></td>
+                    <td><select name="llantas" id="llantas" onchange="actualizarRin()">
+                            <option></option>
+                            <option value="8">8</option>
+                            <option value="12">12</option>
+                        </select>
+                        <label>medida llanta</label>
+                        <select name="llanta_medida" id="medida_llanta" onchange="actualizarMedida()">
+                            <option></option>
+                            <option value="11R22.5">11R22.5</option>
+                            <option value="11R24.5">11R24.5</option>
+                        </select>
+                    </td>
+
+                    <td><a>Frenos neumaticos: </a></td>
+                    <td><select name="frenos_neu">
+                            <option></option>
+                            <option value="Sistema ABS - 2S1M de acuerdo a SCT">Sistema ABS - 2S1M de acuerdo a SCT
+                            </option>
+                        </select></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a>Rin: </a></td>
+                    <td>
+                        <select name="rin" id="rin">
+                            <option></option>
+                        </select>
+
+                        <a>Medida rin</a>
+                        <select name="rin_medida" id="rin_medida">
+                            <option></option>
+                        </select>
+                    </td>
+                    <td>Guarda lateral: </td>
+                    <td><select name="guarda">
+                            <option></option>
+                            <option value="Si">Si</option>
+                        </select></td>
+                <tr>
+                    <td><a>Material rin</a></td>
+                    <td><select name="material_rin" id="rin_medida">
+                            <option></option>
+                            <option value="Acero">Acero</option>
+                            <option value="Aluminio">Aluminio</option>
+                        </select>
+                    </td>
+                    <td><a>Eje retractil: </a></td>
+                    <td><select name="eje_retractil">
+                            <option></option>
+                            <option value="Brazo central con camara de aire">Brazo central con camara de aire</option>
+                            <option value="UBL">UBL</option>
+                        </select>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a>Placa gancho de arrastre: </a></td>
+                    <td><select name="gancho_arrastre" style="width: 330px;" s>
+                            <option></option>
+                            <option value="Colocar placa sin gancho de arranque">Colocar placa sin gancho de arranque
+                            </option>
+                            <option value="Colocar placa con gancho de arranque Premier 2400(2 pulgadas 10 barrenos)">
+                                Colocar placa con gancho de arranque Premier 2400(2 pulgadas 10 barrenos)
+                            </option>
+                            <option value="Colocar placa con gancho de arranque Premier 2880 (3 pulgadas 6 barrenos)">
+                                Colocar placa con gancho de arranque Premier 2880 (3 pulgadas 6 barrenos)
+                            </option>
+                            <option value="Colocar placa con gancho de arranque Wallace Forge R50-10 (2 pulgadas 10">
+                                Colocar placa con gancho de arranque Wallace Forge R50-10 (2 pulgadas 10
+                                barrenos)
+                            </option>
+                            <option value="Colocar placa con gancho de arranque Holland">Colocar placa con gancho de
+                                arranque Holland
+                            </option>
+
+                        </select></td>
+                    <td colspan="4"><button type="submit">Enviar</button>
+                        <button type="reset">Borrar</button>
+                    </td>
+
+                </tr>
+
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

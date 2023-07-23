@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<script>
+    function abrirArchivo() {
+        // Obtener el elemento select
+        const selectElement = document.getElementById("selectFormulario");
+
+        // Obtener el valor seleccionado
+        const selectedValue = selectElement.value;
+
+        // Redirigir a la ruta del archivo seleccionado
+        window.location.href = selectedValue;
+    }
+</script>
+<body>
+    <div class="escoge">
+        <h1>Selecciona un formulario:</h1>
+        <select id="selectFormulario" onchange="abrirArchivo()">
+            <option value="../index.html">Equipos</option>
+            <option value="dolly.html">Dolly Tipo A</option>
+            <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
+            <option value="portaExtensible.html">Portacontenedor 40ft extensible</option>
+            <option value="plana.html">Plataforma Tipo plana</option>
+            <option value="multimodal.html">Plataforma multimodal</option>
+            <option value="gondola.html">Volteo tipo Gondola</option>
+            <option value="porta24.html" selected="selected">Portacontenedor 24ft</option>
+            <option value="tolva.html">Tolva presurizada</option>
+            <option value="cajaseca.html">Caja Seca</option>
+        </select>
+    </div>    <div class="form-container" id="opcion07">
+        <form>
+            <table>
+                <td><a>Modelo: </a></td>
+                <td><select name="">
+                    <option></option>    
+                    <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                    </select>
+                </td>
+                <td rowspan="11"><img src="src/img/Equipos/porta224ft.png" width="600" height="600"></td>
+                <td><a>Perno rey: </a></td>
+                <td><select name="">
+                    <option></option>    
+                    <option>Wallace Forge de 3/8</option>
+                    </select> </td>
+                <tr>
+                </tr>
+                <td><a>Color: </a>
+                </td>
+                <td><input></td>
+                <td>
+                    <a>Manivelas: </a>
+                </td>
+                <td>
+                    <select name="">
+                        <option></option>
+                        <option>Lado piloto</option>
+                        <option>Lado copiloto</option>
+                    </select>
+
+                </td>
+                </tr>
+                <tr>
+                    <td><a>Cabezal frontal: </a></td>
+                    <td><select name="" style="width: 311px;">
+                        <option></option>    
+                        <option>Fabricado en 1/4 pulgadas conformando un cajón tipo C para conexiones neumáticas
+                                y eléctricas
+                            </option>
+
+                        </select></td>
+                    <td><a>Ejes: </a></td>
+                    <td><select name="">
+                        <option></option>    
+                        <option>de 30,000 lbscon 77.5 pulgadas de track</option>
+                        </select> </td>
+                </tr>
+                <tr>
+                    <td><a>Cabezal trasero: </a></td>
+                    <td><select name="" style="width: 310px;">
+                        <option></option>    
+                        <option>Con 1 par de candados fijos tipo twist lock</option>
+
+                        </select></td>
+                    <td><a>Frenos neumaticos: </a></td>
+                    <td><select>
+                        <option></option>    
+                        <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
+                        </select></td>
+
+                </tr>
+                <tr>
+                    <td><a>Mensulas: </a></td>
+                    <td>
+                        <select style="width: 210px;">
+                            <option></option>
+                            <option>1 par de ménsulas en zona frontal, con un twist lock
+                            </option>
+
+                        </select>
+                    </td>
+                    <td><a>Suspension neumatica: </a></td>
+                    <td>
+                        <select>
+                            <option></option>
+                            <option>Azteca King Ak-300 de 30,000 lbs de capacidad
+
+                            </option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a>Patines de estacionamiento: </a></td>
+                    <td>
+                        <select>
+                            <option></option>
+                            <option>1 juego de patines</option>
+                            <option>2 juegos de patines</option>
+                        </select>
+                    </td>
+
+                    <td><a>Eje retractil: </a></td>
+                    <td>
+                        <select>
+                            <option></option>
+                            <option>1</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a>Llantas: </a></td>
+                    <td>
+                        <select>
+                            <option></option>
+                            <option>8</option>
+                        </select>
+                    </td>
+                    <td><a>Porta llantas: </a></td>
+                    <td><select>
+                        <option></option>    
+                        <option>1</option>
+                        </select></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><a>Rin: </a></td>
+                    <td>
+                        <select>
+                            <option></option>
+                            <option>8</option>
+                        </select>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><a>Manivelas: </a></td>
+                    <td><select>
+                        <option></option>    
+                        <option>Lado piloto</option>
+                            <option>Lado copiloto</option>
+                        </select></td>
+
+                </tr>
+                <tr>
+                    <td><a>Placa gancho de arrastre: </a></td>
+                    <td><select style="width: 310px;">
+                        <option></option>    
+                        <option>Colocar placa sin gancho de arranque</option>
+                            <option>Colocar placa con gancho de arranque Premier 2400(2 pulgadas 10 barrenos)
+                            </option>
+                            <option>Colocar placa con gancho de arranque Premier 2880 (3 pulgadas 6 barrenos)
+                            </option>
+                            <option>Colocar placa con gancho de arranque Wallace Forge R50-10 (2 pulgadas 10
+                                barrenos)
+                            </option>
+                            <option>Colocar placa con gancho de arranque Holland
+                            </option>
+
+                        </select></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

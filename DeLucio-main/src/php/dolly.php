@@ -25,9 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $auto_inflado = $_POST["auto_inflado"];
     $porta_loderas = $_POST["porta_loderas"];
     $eje_retractil = $_POST["eje_retractil"];
-    
-
-
+        
     // Acceder al array de precios y obtener los precios seleccionados
     $precios = array(
         "modelo" => array(
