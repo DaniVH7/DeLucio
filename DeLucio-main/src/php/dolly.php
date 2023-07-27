@@ -4,6 +4,7 @@
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recibir datos del formulario
     $modelo = $_POST["modelo"];
+    $color = $_POST["color"];
     $alto = $_POST["alto"];
     $ancho = $_POST["ancho"];
     $largo = $_POST["largo"];
@@ -36,6 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             "2023" => 700,
             "2024" => 750
         ),
+        "color" => 100,
         "alto" => array(
             "Fijo" => 500
         ),
@@ -123,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
 
     $modeloPrecio = $precios["modelo"][$modelo];
+    $colorPrecio = $precios["color"][$color];
     $materialRinPrecio = $precios["material_rin"][$material_rin];
     $altoPrecio = $precios["alto"][$alto];
     $birloPrecio = $precios["birlo"][$birlo];
@@ -146,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $rin_medidaPrecio = $precios["rin_medida"][$rin_medida];
 
     // Calcular el precio total
-    $precioTotal = $modeloPrecio+ $materialRinPrecio + $altoPrecio + $birloPrecio +$anchoPrecio+$ejesPrecio+$largoPrecio+$lubricacionPrecio+$ojillo_tironPrecio+$susp_neumaticaPrecio+$largo_lanzaPrecio+$porta_placasPrecio+$quinta_ruedaPrecio+$altura_quintaPrecio+$porta_loderasPrecio+$soporte_quintaPrecio+$eje_retractilPrecio+$llantasPrecio+$llanta_medidaPrecio+$rinPrecio+$rin_medidaPrecio +$auto_infladoPrecio;
+    $precioTotal = $modeloPrecio+ $colorPrecio+$materialRinPrecio + $altoPrecio + $birloPrecio +$anchoPrecio+$ejesPrecio+$largoPrecio+$lubricacionPrecio+$ojillo_tironPrecio+$susp_neumaticaPrecio+$largo_lanzaPrecio+$porta_placasPrecio+$quinta_ruedaPrecio+$altura_quintaPrecio+$porta_loderasPrecio+$soporte_quintaPrecio+$eje_retractilPrecio+$llantasPrecio+$llanta_medidaPrecio+$rinPrecio+$rin_medidaPrecio +$auto_infladoPrecio;
 
     // Aquí debes realizar la conexión a tu base de datos y guardar los datos
     // Asegúrate de filtrar y escapar los datos antes de guardarlos en la base de datos
@@ -158,7 +161,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Ejemplo de inserción de datos en una tabla "cotizaciones"
-    $sql = "INSERT INTO dolly (modelo,alto,ancho,largo,ojillo,largodelanza,quinta,alturaquinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total) VALUES ('$modelo', '$alto', '$ancho', '$largo', '$ojillo_tiron', '$largo_lanza', '$quinta_rueda', '$altura_quinta', '$soporte_quinta', '$llantas', '$llanta_medida', '$rin', '$rin_medida', '$material_rin', '$ejes', '$birlo', '$lubricacion', '$susp_neumatica','$porta_placas','$auto_inflado', '$porta_loderas', '$eje_retractil', '$precioTotal')";
+    $sql = "INSERT INTO dolly (modelo,color,alto,ancho,largo,ojillo,largodelanza,quinta,alturaquinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total) VALUES ('$modelo','$color','$alto', '$ancho', '$largo', '$ojillo_tiron', '$largo_lanza', '$quinta_rueda', '$altura_quinta', '$soporte_quinta', '$llantas', '$llanta_medida', '$rin', '$rin_medida', '$material_rin', '$ejes', '$birlo', '$lubricacion', '$susp_neumatica','$porta_placas','$auto_inflado', '$porta_loderas', '$eje_retractil', '$precioTotal')";
     
     if ($conexion->query($sql) === TRUE) {
         echo "Cotización guardada correctamente en la base de datos.";

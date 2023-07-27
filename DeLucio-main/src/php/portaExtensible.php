@@ -1,10 +1,8 @@
 <?php
     $modelo = (int)$_POST["modelo"];
     $color = htmlspecialchars($_POST["color"]);
-    $configuracion = htmlspecialchars($_POST["config"]);
     $cabezal_frontal = htmlspecialchars($_POST["cabezal_frontal"]);
     $cabezal_trasero = htmlspecialchars($_POST["cabezal_trasero"]);
-    $mensulas = htmlspecialchars($_POST["mensulas"]);
     $llantas = htmlspecialchars($_POST["llantas"]);
     $medida = htmlspecialchars($_POST["llanta_medida"]);
     $rin = htmlspecialchars($_POST["rin"]);
@@ -12,17 +10,18 @@
     $material = htmlspecialchars($_POST["material_rin"]);
     $birlo = htmlspecialchars($_POST["birlo"]); 
     $lubricacion = htmlspecialchars($_POST["lubricacion"]); 
-    $patines = htmlspecialchars($_POST["patines"]); 
-    $gancho_arrastre = htmlspecialchars($_POST["gancho_arrastre"]);
+    $porta_loderas = htmlspecialchars($_POST["porta_loderas"]); 
     $ejes = htmlspecialchars($_POST["ejes"]);
-    $porta_llantas = htmlspecialchars($_POST["portallantas"]);
-    $perno_rey = htmlspecialchars($_POST["perno_rey"]);
-    $susp_neu = htmlspecialchars($_POST["susp_neu"]);
+    $perno_rey = htmlspecialchars($_POST["perno_rey"]); 
+    $patines = htmlspecialchars($_POST["patines"]);
+    $manivelas = htmlspecialchars($_POST["manivelas"]);  
+    $gancho_arrastre = htmlspecialchars($_POST["gancho_arrastre"]);
     $frenos_neu = htmlspecialchars($_POST["frenos_neu"]);
     $eje_retractil = htmlspecialchars($_POST["eje_retractil"]);
     $tipo = htmlspecialchars($_POST["tipo"]);
-    $guarda = htmlspecialchars($_POST["guarda"]);
-               
+    $porta_llantas = htmlspecialchars($_POST["portallantas"]);
+    $susp_neu = htmlspecialchars($_POST["susp_neu"]);
+
 $precios = array(
     "modelo" => array(
         "2019" => 500,
@@ -33,18 +32,11 @@ $precios = array(
         "2024" => 750
     ),
     "color" => 100,
-    "config" => 50,
     "cabezal_frontal" => array(
         "Con 1 par de seguros tipo pin-lock de 1 pulgada de diámetro" => 100,
-        "Con 2 pared de seguros tipo pin-lock de 1 pulgada de diametro" =>200
     ),
     "cabezal_trasero" => array(
-        "Con 1 par de candados fijos tipo twist lock" => 100,
-    ),
-    "mensulas" => array(
-        "N/A" => 0,
-        "1 par de mensulas centrales fijas, con un twist lock cada una" => 100,
-        "1 par de mensulas centrales fijas y 1 par de mensulas centrales fijas con un twist lock retractil cada una" => 200,
+        "Con 1 par de ménsulas centrales fijas, con 1 twist lock retráctil cada una" => 200,
     ),
     "llantas" => array(
         "8" => 200,
@@ -74,8 +66,21 @@ $precios = array(
         "Grasa" => 100,
         "Aceite" => 110,
     ),
+    "porta_loderas" => array(
+        "Si" => 100
+    ),
+    "ejes" => array(
+        "De 30,000 lbs con 77.5 pulgadas de Track" => 100,
+    ),
+    "perno_rey" => array(
+        "Wallace Forge de 3/8" => 100,
+    ),
     "patines" => array(
         "1 juego de patines" => 100,
+    ),
+    "manivelas"=> array(
+        "Lado piloto" => 100,
+        "Lado copiloto" => 100
     ),
     "gancho_arrastre" => array(
         "Colocar placa sin gancho de arrastre" => 50,
@@ -83,31 +88,22 @@ $precios = array(
         "Colocar placa con gancho de arrastre Wallace Forge R50-10 (2 pulgadas 10 barrenos)"=> 200,
         "Colocar placa con gancho de arrastre Holland"=> 300,
     ),
-    "ejes" => array(
-        "De 30,000 lbs con 77.5 pulgadas de track" => 100,
-    ),
-    "portallantas" => array(
-        "1" => 100,
-    ),
-    "perno_rey" => array(
-        "Wallace Forge de 3/8" => 100,
-    ),    
-    "susp_neu" => array(
-        "Azteca King AK-300 de 30,000 lbs de capacidad" => 100,
-    ),
     "frenos_neu" => array(
         "Sistema ABS – 2S1M de acuerdo a SCT" => 200
     ),
     "eje_retractil" => array(
-        "1er eje" => 100,
-        "2do eje" => 200,
+        "1" => 100,
     ),
     "tipo" => array(
         "Brazo central" => 100,
         "UBL" => 300,
     ),
-    "guarda" => array(
-        "Si" => 100,
+    "portallantas" => array(
+        "No" => 100,
+        "Tipo cinturon" => 200
+    ),  
+    "susp_neu" => array(
+        "Azteca King AK-300 de 30,000 lbs de capacidad" => 100,
     ),
 );
 
@@ -115,7 +111,6 @@ $modeloPrecio = $precios["modelo"][$modelo];
 $colorPrecio = $precios["color"][$color];
 $cabezal_frontalPrecio = $precios["cabezal_frontal"][$cabezal_frontal];
 $cabezal_traseroPrecio = $precios["cabezal_trasero"][$cabezal_trasero];
-$mensulasPrecio = $precios["mensulas"][$mensulas];
 $llantasPrecio = $precios["llantas"][$llantas];
 $medidaPrecio = $precios["llanta_medida"][$medida];
 $rinPrecio = $precios["rin"][$rin];
@@ -123,18 +118,19 @@ $rin_medidaPrecio = $precios["rin_medida"][$rin_medida];
 $materialPrecio = $precios["material_rin"][$material];
 $birloPrecio = $precios["birlo"][$birlo];
 $lubricacionPrecio = $precios["lubricacion"][$lubricacion];
-$patinesPrecio = $precios["patines"][$patines];
-$gancho_arrastrePrecio = $precios["gancho_arrastre"][$gancho_arrastre];
 $ejesPrecio = $precios["ejes"][$ejes];
-$porta_llantasPrecio = $precios["portallantas"][$porta_llantas];
+$portaloderas = $precios["porta_loderas"][$porta_loderas];
 $perno_reyPrecio = $precios["perno_rey"][$perno_rey];
-$susp_neuPrecio = $precios["susp_neu"][$susp_neu];
+$patinesPrecio = $precios["patines"][$patines];
+$manivelasPrecio = $precios["manivelas"][$manivelas];
+$gancho_arrastrePrecio = $precios["gancho_arrastre"][$gancho_arrastre];
 $frenos_neuPrecio = $precios["frenos_neu"][$frenos_neu];
 $eje_retractilPrecio = $precios["eje_retractil"][$eje_retractil];
 $tipoPrecio = $precios["tipo"][$tipo];
-$guardaPrecio = $precios["guarda"][$guarda];
+$porta_llantasPrecio = $precios["portallantas"][$porta_llantas];
+$susp_neuPrecio = $precios["susp_neu"][$susp_neu];
 
-$precioTotal = $modeloPrecio+$colorPrecio+$cabezal_frontalPrecio+$cabezal_traseroPrecio+$mensulasPrecio+$llantasPrecio+$medidaPrecio+$rinPrecio+$rin_medidaPrecio+$materialPrecio+$birloPrecio+$lubricacionPrecio+$patinesPrecio+$gancho_arrastrePrecio+$ejesPrecio+$porta_llantasPrecio+$perno_reyPrecio+$susp_neuPrecio+$frenos_neuPrecio+$eje_retractilPrecio+$tipoPrecio+$guardaPrecio;
+$precioTotal = $modeloPrecio+$colorPrecio+$cabezal_frontalPrecio+$cabezal_traseroPrecio+$llantasPrecio+$medidaPrecio+$rinPrecio+$rin_medidaPrecio+$materialPrecio+$birloPrecio+$lubricacionPrecio+$ejesPrecio+$portaloderas+$perno_reyPrecio+$patinesPrecio+$manivelasPrecio+$gancho_arrastrePrecio+$frenos_neuPrecio+$eje_retractilPrecio+$tipoPrecio+$porta_llantasPrecio+$susp_neuPrecio;
 
 $conexion = new mysqli("127.0.0.1", "root", "", "cotizador");
 if ($conexion->connect_error) {
@@ -142,8 +138,32 @@ if ($conexion->connect_error) {
 }
 
 // Ejemplo de inserción de datos en una tabla "cotizaciones"
-$sql = "INSERT INTO portaestandar (modelo,configuracion,color,cabezal_frontal,cabezal_trasero,mensulas,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,patines,gancho_arrastre,ejes,porta_llantas,perno_rey,susp_neu,frenos_neu,eje_retractil,tipo,guarda,precio_total) 
-VALUES ('$modelo','$configuracion', '$color','$cabezal_frontal','$cabezal_trasero','$mensulas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$lubricacion','$patines','$gancho_arrastre','$ejes','$porta_llantas','$perno_rey','$susp_neu','$frenos_neu','$eje_retractil','$tipo','$guarda','$precioTotal')";
+$sql = "INSERT INTO portaextensible (modelo,color,cabezal_frontal,cabezal_trasero,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,ejes,portaloderas,perno_rey,patines,manivelas,gancho_arrastre,frenos_neu,eje_retractil,tipo,porta_llantas,susp_neu,precio_total) 
+VALUES (
+    '$modelo',
+    '$color',
+    '$cabezal_frontal',
+    '$cabezal_trasero',
+    '$llantas',
+    '$medida',
+    '$rin',
+    '$rin_medida',
+    '$material',
+    '$birlo',
+    '$lubricacion',
+    '$ejes',
+    '$portaloderas',
+    '$perno_rey',
+    '$patines',
+    '$manivelas',
+    '$gancho_arrastre',
+    '$frenos_neu',
+    '$eje_retractil',
+    '$tipo',
+    '$porta_llantas',
+    '$susp_neu',
+    '$precioTotal'
+)";
 
 if ($conexion->query($sql) === TRUE) {
     echo "Cotización guardada correctamente en la base de datos.";
