@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- SweetAlerts CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <!-- SweetAlerts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../src/css/gondola.css">
+    <title>Caja Seca</title>
+</head>
+<script>
+    function abrirArchivo() {
+        // Obtener el elemento select
+        const selectElement = document.getElementById("selectFormulario");
+
+        // Obtener el valor seleccionado
+        const selectedValue = selectElement.value;
+
+        // Redirigir a la ruta del archivo seleccionado
+        window.location.href = selectedValue;
+    }
+</script>
+<body>
+    <header>
+    <div class="escoge">
+        <h1>Selecciona un formulario:</h1>
+        <select id="selectFormulario" onchange="abrirArchivo()" style="width: 200px;">
+            <option value="../index.html">Equipos</option>
+            <option value="dolly.html">Dolly Tipo A</option>
+            <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
+            <option value="portaExtensible.html">Portacontenedor 40ft extensible</option>
+            <option value="plana.html">Plataforma Tipo plana</option>
+            <option value="multimodal.html">Plataforma multimodal</option>
+            <option value="gondola.html">Volteo tipo Gondola</option>
+            <option value="porta24.html">Portacontenedor 24ft</option>
+            <option value="tolva.html">Tolva presurizada</option>
+            <option value="cajaseca.html" selected="selected">Caja Seca</option>
+        </select>
+    </div>
+    </header>
+    <div class="form-container" id="opcion01">
+        <form action="../src/php/caja.php" method="post">
+            <table>
+                <td><label>Modelo: </a></td>
+                <td>
+                    <select name="modelo" id="modeloSelect">
+                        <option></option>
+                        <option value="2019">2019</option>
+                        <option value="2020">2020</option>
+                        <option value="2021">2021</option>
+                        <option value="2022">2022</option>
+                        <option value="2023">2023</option>
+                        <option value="2024">2024</option>
+                    </select>
+                </td>
+                <td rowspan="12"><img src="../src/img/Equipos/cajaseca.png" alt="Dolly tipo A" width="600" height="600"></td>
+                
+                <td><label class="style-label" id="mostrarPiso">Piso: </label></td>
+                <img id="pisoOculto" style="display: none;" src="../src/alerts/piso.png" alt="Imagen">
+                <td>
+                  <select name="piso" style="width: 300px;">
+                    <option>Madera laminada de encino de 1 3/8” en la parte trasera con placa de acero antiderrapante calibre 12”.</option>
+                  </select>
+                </td>
+
+                </tr>
+                <tr>
+                    <td><label>Color:</a>
+                    </td>
+                    <td><input name="color"></td>
+                </tr>
+                <td><label>Frente exterior: </a>
+                </td>
+                <td><select name="frente_exterior">
+                        <option>Hoja Frontal Exterior En Aluminio Calibre 18</option>
+                    </select></td>
+                <td><label class="style-label" id="mostrarForro">Forro: </a></td>
+                <img id="forroOculto" style="display: none;" src="../src/alerts/forro.png" alt="Imagen">
+                <td>
+                    <select name="forro" style="width: 300px;">
+                    <option>Doble zoclo (delantero y trasero )en acero galvanizado A 12” de altura</option></select>
+                </td>
+
+                </tr>
+                <tr>
+                    <td><label>Postes Verticales: </a></td>
+                    <td><select name="postes_verticales">
+                            <option >6 Postes Tipo Sombrero De 2” Galvanizados.</option>
+                        </select></td>
+                    <td><label class="style-label" id="mostrarPaneles">Paneles:</a></td>
+                    <img id="panelesOculta" style="display: none;" src="../src/alerts/paneles.png" alt="Imagen">
+                    <td><select name="paneles">
+                            <option>Fijos</option>
+                        </select>
+                        <label>Material</label>
+                        <select name="material">
+                            <option></option>
+                            <option value="Composite">Composite</option>
+                            <option value="Hoja poste">Hoja poste</option>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Costado exterior y estructural: </a></td>
+                    <td><select name="costado_exterior">
+                            <option>Panel en lamina de aluminio calibre 18, poste logístico galvanizado.</option>
+
+                        </select></td>
+                    <td><label class="style-label" id="mostrarPerno">Perno rey: </a></td>
+                    <img id="pernoOculto" style="display: none;" src="../src/alerts/perno.png" alt="Imagen">
+                    <td><select name="perno_rey">
+                            <option>Perno rey de 1/4</option>
+                        </select> </td>
+
+
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarPostes">Postes laterales: </a></td>
+                    <img id="postesOculta" style="display: none;" src="../src/alerts/ojillo tiron.png" alt="Imagen">
+                    <td>
+                        <select name="postes_laterales" style="width: 300px;">
+
+                            <option>Poste Logístico en Acero Galvanizado.
+                            </option>
+                           </select>
+                    </td>
+                    <td><label class="style-label" id="mostrarPatines">Patines: </a></td>
+                    <img id="patinesOculto" style="display: none;" src="../src/alerts/patines.png" alt="Imagen">
+                    <td><select name="patines">
+                            <option>Un juego de 2 velocidades</option>
+                        </select></td>
+
+
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarMarco">Marco trasero: </a></td>
+                    <img id="marcoOculta" style="display: none;" src="../src/alerts/" alt="Imagen">
+                    <td>
+                        <select name="marco_trasero" style="width: 300px;">
+                            <option>Fabricado En Acero Al Carbón En placa de 1/4” y 3/16” engargolada para dar mayor rigidez, Travesaño Superior De Bajo Perfil, Postes Cuadrados Reforzados Con Ángulos En Las Esquinas Superiores.</option>
+                        </select>
+                    </td>
+                    <td><label>Ejes:</a></td>
+                        <td><select name="ejes">
+                                    <option value="De 30,000 lbs, 77.5 pulgadas de Track">De 30,000 lbs, 77.5 pulgadas de Track</option>
+                            </select> </td>
+
+
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarPuertas">Puertas: </a></td>
+                    <img id="puertaOculta" style="display: none;" src="../src/alerts/puertas.png" alt="Imagen">
+                    <td>
+                        <select name="puerta" style="width: 300px;">
+                            <option></option>
+                            <option>Un herraje por puerta,fabricada En Panel Dura Plate En ½” Con 5 Bisagras Y Una Barras De Cierre Con Bujes De Nylon Por Puerta De 1”.</option>
+                            <option>Doble herraje por puerta,fabricada En Panel Dura Plate En ½” Con 5 Bisagras Y Una Barras De Cierre Con Bujes De Nylon Por Puerta De 1”.
+                            </option>
+                        </select>
+                    </td>
+                    <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </a></td>
+                        <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
+                        <td><select name="susp_neu">
+                                    <option>De 30,000 lbs tipo vantrax con suspensión integral Y componentes de deslizamiento de carro neumático en marca hendrickson®.
+                                    </option>
+                            </select></td>
+
+                </tr>
+                <tr>
+                    <td><label>Techo: </a></td>
+                    <td>
+                        <select name="techo" style="width: 300px;">
+                            <option>La Hoja De Techo En Aluminio En Calibre 19 De Aluminio, Tensada Antes De La Instalación Arcos De Techo De 1” En Acero Galvanizado, 24” Y 12” Centros Previamente Pegados A La Lámina Del Techo, Utilizando 4 Remaches Solidos Dos Por Extremo A Las Bordas Superiores De Cada Costado.
+                            </option>
+                        </select>
+                    </td>
+                    <td><label class="style-label" id="mostrarLoderas">Loderas: </a></td>
+                    <img id="loderaOculta" style="display: none;" src="../src/alerts/portaloderas.png" alt="Imagen">
+                    <td><select name="loderas">
+
+                            <option>Dos blancas con logotipo de nuestra empresa</option>
+                        </select></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label>Cargadores: </a></td>
+                    <td><select name="cargadores" style="width: 300px;">
+                            <option>Viga Tipo Ipr De 4” En Acero Negro Con Capacidad De 80 000 Lbs Ubicadas A 8” Y 12” Centros</option>
+                        </select></td>
+
+                    <td><label>Frenos neumaticos: </a></td>
+                    <td><select name="frenos_neu" style="width: 300px;">
+                            <option>Sistema ABS de acuerdo a la norma 035 y dot 121 la fmvss 121</option>
+                        </select></td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarLlanta">Llantas: </a></td>
+                    <img id="llantaOculta" style="display: none;" src="../src/alerts/llanta.png" alt="Imagen">
+                    <td><select name="llantas" id="llantas" onchange="actualizarRin()" style="width: 30px;">
+                        <option></option>    
+                        <option value="8">8</option>
+                        </select>
+
+                        <label>Medida llantas</label>
+                        <select name="llanta_medida" id="medida_llanta" onchange="actualizarMedida()">
+                            <option></option>
+                            <option value="11R22.5">11R22.5<option>
+                        </select>
+                    </td>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarRin">Rin: </a></td>
+                    <img id="rinOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                    <td><select name="rin" id="rin" style="width: 30px;">
+                        </select>
+                        <label>Medida Rin</label>
+                        <select name="rin_medida" id="rin_medida">
+                            <option></option>
+                        </select
+                    </td>
+                    </td>
+                    <td>
+                        <button type="submit" value="Enviar este formulario">Enviar Formulario</button>
+                    </td>
+                </tr>
+
+            </table>
+        </form>
+    </div>
+<script src="../src/js/scriptCaja.js"></script>
+</body>
+</html>

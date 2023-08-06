@@ -1,0 +1,302 @@
+<!-- <!DOCTYPE html>
+<html lang="es">
+<head>
+    <!-- SweetAlerts CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <!-- SweetAlerts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../src/css/gondola.css">
+    <title>Tolva Presurizada</title>
+</head>
+<script>
+    function abrirArchivo() {
+        // Obtener el elemento select
+        const selectElement = document.getElementById("selectFormulario");
+
+        // Obtener el valor seleccionado
+        const selectedValue = selectElement.value;
+
+        // Redirigir a la ruta del archivo seleccionado
+        window.location.href = selectedValue;
+    }
+</script>
+<body>
+    <div class="escoge">
+        <h1>Selecciona un formulario:</h1>
+        <select id="selectFormulario" onchange="abrirArchivo()" style="width: 250px;">
+            <option value="../index.html">Equipos</option>
+            <option value="dolly.html">Dolly Tipo A</option>
+            <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
+            <option value="portaExtensible.html">Portacontenedor 40ft extensible</option>
+            <option value="plana.html">Plataforma Tipo plana</option>
+            <option value="multimodal.html">Plataforma multimodal</option>
+            <option value="gondola.html" selected=selected>Volteo tipo Gondola</option>
+            <option value="porta24.html">Portacontenedor 24ft</option>
+            <option value="tolva.html">Tolva presurizada</option>
+            <option value="cajaseca.html">Caja Seca</option>
+        </select>
+    </div>
+    <div class="form-container" id="opcion06">
+        <form action="../src/php/tolva.php" method="post">
+            <table>
+                <td><label>Modelo: </label></td>
+                <td><select name="modelo">
+                    <option></option>    
+                    <option>2019</option>
+                        <option>2020</option>
+                        <option>2021</option>
+                        <option>2022</option>
+                        <option>2023</option>
+                        <option>2024</option>
+                    </select>
+                </td>
+                <td rowspan="20"><img src="../src/img/Equipos/tolva.png" width="600" height="600"></td>
+                <td><label class="style-label" id="mostrarPerno">Perno rey: </label></td>
+                <img id="pernoOculto" style="display: none;" src="../src/alerts/perno.png" alt="Imagen">
+                <td><select name="perno_rey">
+                    <option></option>    
+                    <option>Wallace Forge de 3/8</option>
+                    </select> </td>
+                <tr>
+                </tr>
+                <td><label>Color: </label></td>
+                <td><input name="color" style="width: 209px;"></td>
+                
+                    <td><label class="style-label" id="mostrarPlacaperso">Placa personalizada: </label></td>
+                    <img id="placapersoOculto" style="display: none;" src="../src/alerts/personalizada.png" alt="Imagen">
+                    </td>
+                    <td><select name="placa_perso">
+                        <option></option>
+                        <option>Si</option>
+                        <option>No</option>
+                    </select></td>
+
+                </td>
+                </tr>
+                
+                <tr>
+                    <td><label>Capacidad: </label></td>
+                        <td>
+                            <select name="capacidad" id="selectCapacidad">
+                                <option></option>    
+                                <option value="28 m3">28 m3</option>
+                                <option value="30 m3">30 m3</option>
+                                <option value="36 m3">36 m3</option>
+                                <option value="40 m3">40 m3</option>
+                            </select>
+                        </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>Tuberia presurizada </label>
+                        <select name="tuberiaPres">
+                            <option></option>
+                            <option>Frontal y trasera en 3 pulgadas con válvula check en cada terminal</option>
+                        </select>
+                       
+                    
+                    </td> 
+                    <td><label>No.ejes</label></td>
+                    <td><select name="no_ejes" id="ejes" onchange="actualizarPatines()">
+                            <option></option>    
+                            <option>2</option>
+                            <option>3</option>
+                        </select> </td>                </tr>
+                
+                        <tr>
+                    
+                            <td><label>Tuberia de Descarga: </label></td>
+                            <td><select name="tuberiaDes">
+                                <option></option>
+                                <option>los puentes de suspensión (solo sin placa de gancho de arrastre)
+                                </option>
+                                <option>En 4 pulgadas arriba de los puentes de suspensión (con o sin placa de gancho de arrastre)
+                                </option>
+                                <option>En 4 pulgadas por debajo de los ejes (con o sin placa de gancho de arrastre)
+                                </option>
+                            </select></td>
+                    <td><label>Ejes: </label></td>
+                    <td><select name="ejes">
+                        <option></option>    
+                        <option>De 30,000 lbs con 77.5 pulgadas de track</option>
+                        </select> </td>
+
+                </tr>
+                <tr><td><label class="style-label" id="mostrarLlanta">Llantas: </label></td>
+                    <img id="llantasOculto" style="display: none;" src="../src/alerts/llanta.png" alt="Imagen">
+                 <td>
+                        <select name="llantas" id="llantas" onchange="actualizarRin()" style="width: 50px;">
+                            <option></option>
+                            <option>8</option>
+                            <option>12</option>
+                        </select>
+                        <label>Medida llantas</label>
+                        <select name="llanta_medida" id="medida_llanta" onchange="actualizarMedida()">
+                            <option></option>
+                            <option value="11R22.5">11R22.5<option>
+                            <option value="11R24.5">11R24.5</option>
+                        </select>
+                    </td>
+                    <td><label class="style-label" id="mostrarBirlo">Birlo: </label></td>
+                <img id="birloOculto" style="display: none;" src="../src/alerts/birlo.png" alt="Imagen">
+                <td>
+                    <select name="birlo" id="birlo"></select>
+                    <option></option>
+                </td>
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarRin">Rin: </label></td>
+                    <img id="rinOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                <td>
+                        <select name="rin" id="rin" style="width: 50px;">
+                            <option></option>
+                        </select>
+                        <label>Medida Rin</label>
+                        <select name="rin_medida" id="rin_medida">
+                            <option></option>
+                        </select>
+                        <td><label class="style-label" id="mostrarLub">Lubricacion</label></td>
+                <img id="lubOculto" style="display: none;" src="../src/alerts/lub.png" alt="Imagen">
+                <td>
+                    <select name="lubricacion">
+                        <option></option>
+                        <option>Grasa</option>
+                        <option>Aceite</option>
+                    </select>
+                </td>
+                    
+                </tr>
+                
+                <tr>
+                    <td><label class="style-label" id="mostrarMaterial">Material rin: </label></td>
+                    <img id="materialOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                  <td>
+                        <select name="material_rin" id="material" onchange="actualizarBirlo()">
+                            <option></option>
+                            <option value="Acero">Acero</option>
+                            <option value="Aluminio">Aluminio</option>
+                        </select>
+                        <td><label class="style-label" id="mostrarRetractil">Eje retractil: </label></td>
+                        <img id="retractilOculto" style="display: none;" src="../src/alerts/retractil.jpg" alt="Imagen">
+                     <td>
+                            <select name="eje_retractil">
+                                <option></option>
+                                <option>1er eje</option>
+                                <option>2do eje</option>
+                            </select>
+                            <label>Tipo</label>
+                            <select name="tipo">
+                                <option></option>
+                                <option>Brazo central con camara de aire</option>
+                                <option>UBL</option>
+                            </select>
+                        </td>
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarPatines">Patines de Estacionamiento: </label></td>
+                    <img id="patinesOculto" style="display: none;" src="../src/alerts/patines.png" alt="Imagen">
+                <td><select name="patines" id="patines">
+                        <option></option>    
+                        <option>1 juego de patines</option>
+                            <option>2 juegos de patines</option>
+                        </select>
+                        <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </label></td>
+                    <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
+                    <td>
+                        <select name="susp_neu" style="width: 315px;">
+                            <option></option>
+                            <option value="Azteca King Ak-300 de 30,000 lbs de capacidad">Azteca King Ak-300 de 30,000
+                                lbs de capacidad</option>
+                        </select>
+                    </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarGancho">Placa gancho de arrastre: </label></td>
+                    <img id="ganchoOculto" style="display: none;" src="../src/alerts/gancho.png" alt="Imagen">
+                 <td><select name="gancho_arrastre" style="width: 330px;" s>
+                            <option></option>
+                            <option value="Colocar placa sin gancho de arrastre">Colocar placa sin gancho de arrastre
+                            </option>
+                            <option value="Colocar placa con gancho de arrastre Premier 2400(2 pulgadas 10 barrenos)">
+                                Colocar placa con gancho de arrastre Premier 2400(2 pulgadas 10 barrenos)
+                            </option>
+                            <option value="Colocar placa con gancho de arrastre Premier 2880 (3 pulgadas 6 barrenos)">
+                                Colocar placa con gancho de arrastre Premier 2880 (3 pulgadas 6 barrenos)
+                            </option>
+                            <option value="Colocar placa con gancho de arrastre Wallace Forge R50-10 (2 pulgadas 10 barrenos)">
+                                Colocar placa con gancho de arrastre Wallace Forge R50-10 (2 pulgadas 10
+                                barrenos)
+                            </option>
+                            <option value="Colocar placa con gancho de arrastre Holland">Colocar placa con gancho de
+                                arrastre Holland
+                            </option>
+
+                        </select></td>
+                    <td><label>Frenos neumaticos: </label></td>
+                    <td><select name="frenos_neu">
+                        <option></option>    
+                        <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
+                        </select></td>
+                    </td>
+                    </td>
+
+                    
+                </tr>
+                <tr>
+                    
+                    <td><label class="style-label" id="mostrarPortallantas">Porta llantas: </label></td>
+            <img id="portallantasOculto" style="display: none;" src="../src/alerts/portallantas.png" alt="Imagen">
+            <td><select name="portallantas">
+                        <option></option>    
+                        <option>Tipo cinturon</option>
+                            <option>Cadena</option>
+                        </select>
+                        <td><label class="style-label" id="mostrarGuarda">Guarda lateral: </label></td>
+                        <img id="guardaOculto" style="display: none;" src="../src/alerts/guarda.png" alt="Imagen">
+                       <td>
+                            <select name="guarda">
+                                <option></option>
+                                <option>Si</option>
+                            </select>
+                        </td>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarPrecaucion">Letrero de precaucion: </label></td>
+                    <img id="letreroOculto" style="display: none;" src="../src/alerts/precaucion.png" alt="Imagen">
+             <td><select name="letrero">
+                        <option></option>    
+                        <option>Si</option>
+                            <option>No</option>
+                        </select>
+                        <td><label class="style-label" id="mostrarInflado">Auto inflado: </label></td>
+                        <img id="infladoOculto" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
+                <td>
+                        <select name="auto_inflado">
+                            <option></option>
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </td>
+                </td>
+                <tr>
+                    <td>
+                        <button type="submit">Enviar</button>
+                        <button type="reset">Borrar</button>
+                    </td>
+                </tr>
+                
+            </table>
+        </form>
+    </div>
+    <script src="../src/js/scriptTolva.js"></script>
+
+</body>
+</html>

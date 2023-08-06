@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <!-- SweetAlerts CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+    <!-- SweetAlerts JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="../src/css/gondola.css">
+    <title>Volteo tipo Gondola</title>
 </head>
-<script src="../src/js/scriptsGondola.js"></script>
 <script>
     function abrirArchivo() {
         // Obtener el elemento select
@@ -22,7 +26,7 @@
 <body>
     <div class="escoge">
         <h1>Selecciona un formulario:</h1>
-        <select id="selectFormulario" onchange="abrirArchivo()">
+        <select id="selectFormulario" onchange="abrirArchivo()" style="width: 250px;">
             <option value="../index.html">Equipos</option>
             <option value="dolly.html">Dolly Tipo A</option>
             <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
@@ -38,7 +42,7 @@
     <div class="form-container" id="opcion06">
         <form action="../src/php/gondola.php" method="post">
             <table>
-                <td><a>Modelo: </a></td>
+                <td><label>Modelo: </label></td>
                 <td><select name="modelo">
                     <option></option>    
                     <option>2019</option>
@@ -50,31 +54,31 @@
                     </select>
                 </td>
                 <td rowspan="20"><img src="../src/img/Equipos/gondola.jpg" width="600" height="600"></td>
-                <td><a>Perno rey: </a></td>
+                <td><label class="style-label" id="mostrarPerno">Perno rey: </label></td>
+                <img id="pernoOculto" style="display: none;" src="../src/alerts/perno.png" alt="Imagen">
                 <td><select name="perno_rey">
                     <option></option>    
                     <option>Wallace Forge de 3/8</option>
                     </select> </td>
                 <tr>
                 </tr>
-                <td><a>Color: </a>
-                </td>
+                <td><label>Color: </label></td>
                 <td><input name="color" style="width: 209px;"></td>
-                <td>
-                    <a>Portallantas: </a>
-                </td>
-                <td>
-                    <select name="porta_llantas">
+                
+                    <td><label class="style-label" id="mostrarPortallantas">Porta llantas: </label></td>
+                    <img id="portallantasOculto" style="display: none;" src="../src/alerts/portallantas.png" alt="Imagen">
+                    </td>
+                    <td><select name="porta_llantas">
                         <option></option>
                         <option>1</option>
                         <option>2</option>
-                    </select>
+                    </select></td>
 
                 </td>
                 </tr>
                 
                 <tr>
-                    <td><a>Capacidad: </a></td>
+                    <td><label>Capacidad: </label></td>
                         <td>
                             <select name="capacidad" id="selectCapacidad" onchange="anchoyLargo()">
                                 <option></option>    
@@ -84,8 +88,9 @@
                                 <option value="50 m3">50 m3</option>
                             </select>
                         </td>
-                    <td><a>Placa gancho de arrastre: </a></td>
-                    <td><select name="gancho_arrastre" style="width: 310px;">
+                        <td><label class="style-label" id="mostrarGancho">Placa gancho de arrastre: </label></td>
+                        <img id="ganchoOculto" style="display: none;" src="../src/alerts/gancho.png" alt="Imagen">
+                     <td><select name="gancho_arrastre" style="width: 310px;">
                         <option></option>    
                         <option>Colocar placa sin gancho de arrastre</option>
                             <option>Colocar placa con gancho de arrastre Premier 2400(2 pulgadas 10 barrenos)
@@ -102,33 +107,34 @@
                 </tr>
                 <tr>
                     <td colspan="2">
-                        <a>Alto: </a>
+                        <label>Alto: </label>
                         <select name="alto" id="selectAlto">
                             <option></option>
                         </select>
-                        <a>Ancho: </a>
+                        <label>Ancho: </label>
                         <select name="ancho" id="selectAncho">
                             <option></option>
                         </select>
-                        <a>Largo: </a>
+                        <label>Largo: </label>
                         <select name="largo" id="selectLargo">
                             <option></option>
                         </select>
                     </td> 
-                    <td><label></label>No.ejes</label></td>
+                    <td><label>No.ejes</label></td>
                     <td><select name="num_ejes" id="ejes" onchange="actualizarPatines()">
                             <option></option>    
                             <option>2</option>
                             <option>3</option>
                         </select> </td>                </tr>
                 <tr>
-                    <td><a>Patines de estacionamiento: </a></td>
-                    <td><select name="patines" id="patines">
+                    <td><label class="style-label" id="mostrarPatines">Patines de Estacionamiento: </label></td>
+                    <img id="patinesOculto" style="display: none;" src="../src/alerts/patines.png" alt="Imagen">
+                <td><select name="patines" id="patines">
                         <option></option>    
                         <option>1 juego de patines</option>
                             <option>2 juegos de patines</option>
                         </select></td>
-                    <td><a>Ejes: </a></td>
+                    <td><label>Ejes: </label></td>
                     <td><select name="ejes">
                         <option></option>    
                         <option>De 30,000 lbs con 77.5 pulgadas de track</option>
@@ -136,15 +142,17 @@
 
                 </tr>
                 <tr>
-                    <td><a>Manivelas: </a></td>
-                    <td>
+                    <td><label class="style-label" id="mostrarManivelas">Manivelas: </label></td>
+                    <img id="manivelasOculto" style="display: none;" src="../src/alerts/manivelas.png" alt="Imagen">
+                  <td>
                         <select name="manivelas">
                             <option></option>
                             <option>Lado piloto</option>
                             <option>Lado copiloto</option>
                         </select>
-                        <td><label>Placa personalizada</label></td>
-                        <td><select name="placa_perso">
+                        <td><label class="style-label" id="mostrarPlacaperso">Placa personalizada: </label></td>
+                        <img id="placaOculto" style="display: none;" src="../src/alerts/personalizada.png" alt="Imagen">
+                     <td><select name="placa_perso">
                             <option></option>    
                             <option>Si</option>
                             <option>No</option>
@@ -154,9 +162,10 @@
                     
                 </tr>
                 <tr>
-                    <td><a>Llantas: </a></td>
-                    <td>
-                        <select name="llantas" id="llantas" onchange="actualizarRin()">
+                    <td><label class="style-label" id="mostrarLlanta">Llantas: </label></td>
+                    <img id="llantasOculto" style="display: none;" src="../src/alerts/llanta.png" alt="Imagen">
+                 <td>
+                        <select name="llantas" id="llantas" onchange="actualizarRin()" style="width: 50px;">
                             <option></option>
                             <option>8</option>
                             <option>12</option>
@@ -168,7 +177,7 @@
                             <option value="11R22.5">11R22.5<option>
                             <option value="11R24.5">11R24.5</option>
                         </select>
-                        <td><a>Suspension neumatica</a></td>
+                        <td><label>Suspension neumatica</label></td>
                     <td>
                         <select name="susp_neu">
                             <option></option>
@@ -179,29 +188,30 @@
 
                 </tr>
                 <tr>
-                    <td><a>Rin: </a></td>
-                    <td>
-                        <select name="rin" id="rin">
-                            <option></option>
+                    <td><label class="style-label" id="mostrarRin">Rin: </label></td>
+                    <img id="rinOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                <td>
+                        <select name="rin" id="rin" style="width: 50px;">
                             <option></option>
                         </select>
                         <label>Medida Rin</label>
                         <select name="rin_medida" id="rin_medida">
                             <option></option>
-                            <option></option>
                         </select>
                     
                 </tr>
                 <tr>
-                    <td><a>Material rin: </a></td>
-                    <td>
+                    <td><label class="style-label" id="mostrarMaterial">Material rin: </label></td>
+                    <img id="materialOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                  <td>
                         <select name="material_rin" id="material" onchange="actualizarBirlo()">
                             <option></option>
                             <option value="Acero">Acero</option>
                             <option value="Aluminio">Aluminio</option>
                         </select>
-                        <td><a>Eje retractil: </a></td>
-                        <td>
+                        <td><label class="style-label" id="mostrarRetractil">Eje retractil: </label></td>
+                        <img id="retractilOculto" style="display: none;" src="../src/alerts/retractil.jpg" alt="Imagen">
+                     <td>
                             <select name="eje_retractil">
                                 <option></option>
                                 <option>1er eje</option>
@@ -218,14 +228,15 @@
                     
                 </tr>
                 <tr>
-                    <td><a>Birlo: </a></td>
-                    <td>
+                    <td><label class="style-label" id="mostrarBirlo">birlo: </label></td>
+                    <img id="birloOculto" style="display: none;" src="../src/alerts/birlo.png" alt="Imagen">
+                <td>
                         <select name="birlo" id="birlo">
                             <option></option>
                             <option></option>
                         </select>
                     </td>
-                    <td><a>Frenos neumaticos: </a></td>
+                    <td><label>Frenos neumaticos: </label></td>
                     <td><select name="frenos_neu">
                         <option></option>    
                         <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
@@ -237,15 +248,17 @@
                 </tr>
                 <tr>
                     
-                    <td><a>Caja de herramientas: </a></td>
-                    <td><select name="caja_herramientas">
+                    <td><label class="style-label" id="mostrarCaja">Caja de herramientas: </label></td>
+            <img id="cajaOculto" style="display: none;" src="../src/alerts/caja.png" alt="Imagen">
+            <td><select name="caja_herramientas">
                         <option></option>    
                         <option>Lateral</option>
                             <option>Interior</option>
                             <option>Entre vigas</option>
                         </select>
-                        <td><a>Guarda lateral: </a></td>
-                        <td>
+                        <td><label class="style-label" id="mostrarGuarda">Guarda lateral: </label></td>
+                        <img id="guardaOculto" style="display: none;" src="../src/alerts/guarda.png" alt="Imagen">
+                       <td>
                             <select name="guarda">
                                 <option></option>
                                 <option>Si</option>
@@ -255,14 +268,16 @@
 
                 </tr>
                 <tr>
-                    <td><a>Letrero de precaucion: </a></td>
-                    <td><select name="letrero">
+                    <td><label class="style-label" id="mostrarPrecaucion">Letrero de precaucion: </label></td>
+                    <img id="letreroOculto" style="display: none;" src="../src/alerts/precaucion.png" alt="Imagen">
+             <td><select name="letrero">
                         <option></option>    
                         <option>Si</option>
                             <option>No</option>
                         </select>
-                        <td><a>Auto inflado: </a></td>
-                    <td>
+                        <td><label class="style-label" id="mostrarInflado">Auto inflado: </label></td>
+                        <img id="infladoOculto" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
+                <td>
                         <select name="auto_inflado">
                             <option></option>
                             <option>Si</option>
@@ -280,5 +295,7 @@
             </table>
         </form>
     </div>
+    <script src="../src/js/scriptsGondola.js"></script>
+
 </body>
 </html>

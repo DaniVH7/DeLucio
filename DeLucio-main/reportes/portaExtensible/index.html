@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Generar PDF de Cotización</title>
+        <link rel="stylesheet" type="text/css" href="../css/all.css">
+
+        <img id="logo" src="logo.png" style="display: none;">
+        <!-- Incluir la librería pdfmake -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/pdfmake.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.68/vfs_fonts.js"></script>
+    </head>
+    <body>
+        <div class="complete">
+            <h1>Generador de Cotizaciones</h1>
+        </div>
+        <div class="equipos">
+            <h1>Portacontenedor Extensible</h1>
+        </div>
+            <div class="escoge">
+            <!-- Select para elegir la cotización -->
+            <label for="cotizacion">Selecciona una cotizacion:</label>
+            <select id="cotizacion"></select>
+        
+            <!-- Botón para generar el PDF -->
+            <button onclick="generarPDF()">Generar PDF</button>
+        
+            <!-- Div para mostrar mensajes de error -->
+            <div id="mensaje-error"></div>
+        
+            <!-- Enlace al archivo de la librería pdfMake -->
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.2/pdfmake.min.js"></script>
+        
+            <!-- Enlace al archivo de definiciones y funciones JavaScript -->
+            <script src="app.js"></script>
+        </div>
+    </body>
+</html>
