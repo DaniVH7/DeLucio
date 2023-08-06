@@ -146,8 +146,9 @@ $sql = "INSERT INTO portaestandar (modelo,configuracion,color,cabezal_frontal,ca
 VALUES ('$modelo','$configuracion', '$color','$cabezal_frontal','$cabezal_trasero','$mensulas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$lubricacion','$patines','$gancho_arrastre','$ejes','$porta_llantas','$perno_rey','$susp_neu','$frenos_neu','$eje_retractil','$tipo','$guarda','$precioTotal')";
 
 if ($conexion->query($sql) === TRUE) {
-    echo "Cotización guardada correctamente en la base de datos.";
-} else {
+    header("Location:../html/enviado.html");
+}
+    else {
     echo "Error al guardar la cotización: " . $conexion->error;
 }
 

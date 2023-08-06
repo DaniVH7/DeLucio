@@ -164,7 +164,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO dolly (modelo,color,alto,ancho,largo,ojillo,largodelanza,quinta,alturaquinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total) VALUES ('$modelo','$color','$alto', '$ancho', '$largo', '$ojillo_tiron', '$largo_lanza', '$quinta_rueda', '$altura_quinta', '$soporte_quinta', '$llantas', '$llanta_medida', '$rin', '$rin_medida', '$material_rin', '$ejes', '$birlo', '$lubricacion', '$susp_neumatica','$porta_placas','$auto_inflado', '$porta_loderas', '$eje_retractil', '$precioTotal')";
     
     if ($conexion->query($sql) === TRUE) {
-        echo "Cotización guardada correctamente en la base de datos.";
+        header("Location:../html/enviado.html");
     } else {
         echo "Error al guardar la cotización: " . $conexion->error;
     }

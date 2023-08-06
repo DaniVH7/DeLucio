@@ -186,7 +186,7 @@ $sql = "INSERT INTO gondola (modelo,color,capacidad,alto,ancho,largo,patines,man
 VALUES ('$modelo','$color','$capacidad','$alto','$ancho','$largo','$patines','$manivelas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$caja_herramientas','$letrero','$perno_rey','$porta_llantas','$gancho_arrastre','$ejes','$no_ejes','$placa_person','$susp_neu','$eje_retractil','$tipo','$frenos_neu','$guarda','$auto_inflado','$precioTotal')";
 
 if ($conexion->query($sql) === TRUE) {
-    echo "Cotización guardada correctamente en la base de datos.";
+    header("Location:../html/enviado.html");
 } else {
     echo "Error al guardar la cotización: " . $conexion->error;
 }

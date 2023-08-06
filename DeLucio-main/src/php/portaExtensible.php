@@ -166,7 +166,7 @@ VALUES (
 )";
 
 if ($conexion->query($sql) === TRUE) {
-    echo "Cotización guardada correctamente en la base de datos.";
+    header("Location:../html/enviado.html");
 } else {
     echo "Error al guardar la cotización: " . $conexion->error;
 }

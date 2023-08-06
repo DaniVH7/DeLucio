@@ -23,8 +23,6 @@
             $letrero = htmlspecialchars($_POST["letrero"]);
             $placa_perso = htmlspecialchars($_POST["placa_perso"]);
 
-                       
-
 
             $precios = array(
                 "modelo" => array(
@@ -177,7 +175,7 @@
     $sql = "INSERT INTO plana (modelo,color,largo,piso,patines,llantas,medida,rin,rin_medida,material,frenos_neu,frente_lam,loderas,guarda,ejes,perno_rey,manivelas,gancho_arrastre,susp_neu,matracas,caja_herramientas,letrero,placa_perso,precio_total) VALUES ('$modelo', '$color', '$largo', '$piso', '$patines','$llantas', '$medida', '$rin', '$rin_medida', '$material', '$frenos_neu', '$frente_lam', '$loderas', '$guarda','$ejes','$perno_rey', '$manivelas', '$gancho_arrastre','$susp_neu','$matracas','$caja_herramientas','$letrero','$placa_perso', '$precioTotal')";
     
     if ($conexion->query($sql) === TRUE) {
-        echo "Cotización guardada correctamente en la base de datos.";
+        header("Location:../html/enviado.html");
     } else {
         echo "Error al guardar la cotización: " . $conexion->error;
     }

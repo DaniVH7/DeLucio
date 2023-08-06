@@ -1,0 +1,71 @@
+body{
+    background-color: #D9D9D9;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+/* Estilos para el contenedor del input,select */
+input,select {
+    display: inline-block;
+    position: relative;
+  }
+  
+  /* Estilos para el input,select */
+  input,select {
+  background-repeat: no-repeat;
+  background-position: right center;
+  padding: 8px 30px 8px 8px;
+  border: 1px solid #2870C9;
+  border-radius: 4px;
+  width: 120px;
+  font-size: 16px;
+  color: #333;
+  }
+
+
+  select:focus, select:hover {
+    border-color: #D9D9D9   ;
+    outline: none;
+    box-shadow: 0 0 15px #2870C9;  }
+  
+  /* Estilos para las opciones del input,select */
+  input,select option {
+    background-color: #fff;
+    color: #333;
+  }
+  select option:checked {
+    background-color: #2870C9; 
+    color: #fff; 
+  }
+  
+.header {
+    background-color: #333;
+    color: blue;
+  }
+
+  .escoge {
+    text-align: center;
+    background-color: rgb(40,112,201);
+    border-radius: 6px;
+    color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+  }
+  .selectFormulario{
+    margin-bottom: 10%;
+    color: white;
+  }
+
+  select {
+    background-repeat: no-repeat;
+    background-position: right center;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    }
+    select::-ms-expand {
+    display: none; /*Evita que se muestre la flecha por defecto en versiones de IE*/
+    }
+    .style-label:hover{
+      color: rgb(18, 135, 224);
+      font-size: 25px;
+      box-shadow: 5px 3px 3px red;
+    }

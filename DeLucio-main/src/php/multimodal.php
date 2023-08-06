@@ -144,7 +144,7 @@ $sql = "INSERT INTO multimodal (modelo,color,cabezal_frontal,cabezal_trasero,pis
 VALUES ('$modelo', '$color','$cabezal_frontal','$cabezal_trasero', '$piso', '$mensulas_centrales','$manivelas', '$llantas','$medida', '$rin', '$rin_medida', '$material', '$gancho_arrastre', '$perno_rey','$porta_llantas', '$caja_herramientas', '$susp_neu','$ejes','$frenos_neu', '$eje_retractil', '$guarda','$precioTotal')";
 
 if ($conexion->query($sql) === TRUE) {
-    echo "Cotización guardada correctamente en la base de datos.";
+    header("Location:../html/enviado.html");
 } else {
     echo "Error al guardar la cotización: " . $conexion->error;
 }
