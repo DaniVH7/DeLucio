@@ -109,11 +109,30 @@ function generarPDFconId(cotizacionId) {
                                 width: 200, // Ancho de la imagen en puntos (ajusta según tus necesidades)
                             },
                             {
+                                text: "Portacontenedor 24 pies",
+                                fontSize: 20, // Tamaño de fuente en puntos
+                            },{
+                                table: {
+                                    widths: ['*', '*', '*'],
+                                    headerRows: 1,
+                                    body: [
+                                        ["Nombre", "Correo", "Telefono"],
+                                        ...datos.map(row => [   
+                                            row.nombre,
+                                            row.correo,
+                                            row.telefono,
+                                            
+                                        ])
+                                    ],
+                                    
+                                }
+                            },
+                            {
                                 table: {
                                     widths: ['*','*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["id_config","modelo", "color"],
+                                        ["Cotizacion No.","Modelo", "Color"],
                                         ...datos.map(row => [
                                             row.id_config,
                                             row.modelo,
@@ -127,7 +146,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*','*', '*'],                                    
                                     headerRows: 1,
                                     body: [
-                                        ["cabezal_frontal","cabezal_trasero", "mensulas"],
+                                        ["Cabezal frontal","Cabezal trasero", "Mensulas"],
                                         ...datos.map(row => [
                                             row.cabezal_frontal,
                                             row.cabezal_trasero,
@@ -141,7 +160,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["patines", "manivelas"],
+                                        ["Patines de estacionamiento", "Manivelas"],
                                         ...datos.map(row => [
                                             row.patines,
                                             row.manivelas
@@ -154,7 +173,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*','*'],
                                     headerRows: 1,
                                     body: [
-                                        ["llantas", "llantamedida", "rin", "rinmedida", "material"],
+                                        ["Llantas", "Medida", "Rin", "Medida", "Material"],
                                         ...datos.map(row => [
                                             row.llantas,
                                             row.llantamedida,
@@ -170,7 +189,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["birlo", "perno_rey", "ejes", "no_ejes"],
+                                        ["Birlo", "Perno rey", "Ejes", "No. de ejes"],
                                         ...datos.map(row => [
                                             row.birlo,
                                             row.perno_rey,
@@ -185,7 +204,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*','*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["frenos_neu", "susp_neu","eje_retractil","tipo"],
+                                        ["Frenos neumaticos", "Suspension neumatica","Eje retractil","Tipo"],
                                         ...datos.map(row => [
                                             row.frenos_neu,
                                             row.susp_neu,
@@ -200,7 +219,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["gancho_arrastre", "porta_llantas"],
+                                        ["Gancho de arrastre", "Porta llantas"],
                                         ...datos.map(row => [
                                             row.gancho_arrastre,
                                             row.porta_llantas,
@@ -213,7 +232,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*'],
                                     headerRows: 1,
                                     body: [
-                                        ["precio_total"],
+                                        ["Precio total"],
                                         ...datos.map(row => [
                                             row.precio_total,
                                         ])

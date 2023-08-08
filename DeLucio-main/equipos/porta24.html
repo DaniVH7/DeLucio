@@ -22,10 +22,36 @@
         window.location.href = selectedValue;
     }
 </script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('porta24').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Obtener los valores de los campos
+            const nombre = document.getElementsByName('nombre')[0].value;
+            const correo = document.getElementsByName('correo')[0].value;
+            const telefono = document.getElementsByName('telefono')[0].value;
+
+            // Verificar si los campos están llenados
+            if (nombre === '' || correo === '' || telefono === '') {
+                Swal.fire({
+                    title: 'Completa tus datos de contacto',
+                    text: 'Por favor, completa todos los campos requeridos',
+                    icon: 'error',
+                    confirmButtonText: 'Cerrar'
+                });
+            }
+            else {
+                // Enviar formulario
+                this.submit();
+            }
+        });
+    });
+</script>
 <body>
     <div class="escoge">
         <h1>Selecciona un formulario:</h1>
-        <select id="selectFormulario" onchange="abrirArchivo()" style="width: 260px;">
+        <select required id="selectFormulario" onchange="abrirArchivo()" style="width: 260px;">
             <option value="../index.html">Equipos</option>
             <option value="dolly.html">Dolly Tipo A</option>
             <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
@@ -38,10 +64,20 @@
             <option value="cajaseca.html">Caja Seca</option>
         </select>
     </div>    <div class="form-container" id="opcion07">
-        <form action="../src/php/porta24.php" method="post">
+        <form id="porta24" action="../src/php/porta24.php" method="post">
             <table>
+                <tr>
+                    <tr>
+                        Datos personales:
+                    </tr>
+                    <tr>
+                        <input class="form" type="text" name="nombre" placeholder="Nombre completo">
+                        <input class="form" type="email" name="correo" placeholder="Correo electrónico">
+                        <input class="form" type="tel" name="telefono" placeholder="Número de teléfono">
+                    </tr>
+                </tr>
                 <td><label>Modelo: </label></td>
-                <td><select name="modelo">
+                <td><select required name="modelo">
                     <option></option>    
                     <option>2019</option>
                         <option>2020</option>
@@ -54,7 +90,7 @@
                 <td rowspan="11"><img src="../src/img/Equipos/porta224ft.png" width="600" height="600"></td>
                 <td><label class="style-label" id="mostrarPerno">Perno rey: </label></td>
                 <img id="pernoOculto" style="display: none;" src="../src/alerts/perno.png" alt="Imagen">
-            <td><select name="perno_rey">
+            <td><select required name="perno_rey">
                     <option></option>    
                     <option>Wallace Forge de 3/8</option>
                     </select> </td>
@@ -64,32 +100,32 @@
                 </td>
                 <td><input name="color"></td>
                 <td><label>Numero de ejes: </label></td>
-                <td><select name="num_ejes">
+                <td><select required name="num_ejes">
                     <option></option>    
                         <option>2</option>
                     </select></td>
                 </tr>
                 <tr>
                     <td><label>Cabezal frontal: </label></td>
-                    <td><select name="cabezal_frontal" style="width: 311px;">
+                    <td><select required name="cabezal_frontal" style="width: 311px;">
                         <option></option>    
                         <option>Fabricado en 1/4 pulgadas conformando un cajón tipo C para conexiones neumáticas y eléctricas</option>  
                         </select></td>
                     <td><label>Ejes: </label></td>
-                    <td><select name="ejes">
+                    <td><select required name="ejes">
                         <option></option>    
                         <option>De 30,000 lbs con 77.5 pulgadas de track</option>
                         </select> </td>
                 </tr>
                 <tr>
                     <td><label>Cabezal trasero: </label></td>
-                    <td><select name="cabezal_trasero" style="width: 310px;">
+                    <td><select required name="cabezal_trasero" style="width: 310px;">
                         <option></option>    
                         <option>Con 1 par de candados fijos tipo twist lock</option>
 
                         </select></td>
                     <td><label>Frenos neumaticos: </label></td>
-                    <td><select name="frenos_neu">
+                    <td><select required name="frenos_neu">
                         <option></option>    
                         <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
                         </select></td>
@@ -98,7 +134,7 @@
                 <tr>
                     <td><label >Mensulas: </label></td>
                     <td>
-                        <select name="mensulas" style="width: 210px;">
+                        <select required name="mensulas" style="width: 210px;">
                             <option></option>
                             <option>1 par de ménsulas en zona frontal, con un twist lock
                             </option>
@@ -107,7 +143,7 @@
                     <td><label class="style-label" id="mostrarSusp">Suspension neumatica </label></td>
                 <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
                <td>
-                        <select name="susp_neu">
+                        <select required name="susp_neu">
                             <option></option>
                             <option>Azteca King AK-300 de 30,000 lbs de capacidad</option>
                         </select>
@@ -117,7 +153,7 @@
                     <td><label class="style-label" id="mostrarPatines">Patines de Estacionamiento: </label></td>
                     <img id="patinesOculto" style="display: none;" src="../src/alerts/patines.png" alt="Imagen">
                        <td>
-                        <select name="patines">
+                        <select required name="patines">
                             <option></option>
                             <option>1 juego de patines</option>
                             <option>2 juegos de patines</option>
@@ -127,12 +163,12 @@
                     <td><label class="style-label" id="mostrarRetractil">Eje retractil:</label></td>
                     <img id="retractilOculto" style="display: none;" src="../src/alerts/retractil.jpg" alt="Imagen">
                      <td>
-                        <select name="eje_retractil">
+                        <select required name="eje_retractil">
                             <option></option>
                             <option>1</option>
                         </select>
                         <label>Tipo: </label>
-                        <select name="tipo">
+                        <select required name="tipo">
                             <option></option>
                             <option>Brazo central con camara de aire</option>
                             <option value="UBL">UBL</option>
@@ -143,14 +179,14 @@
                 <tr>
                     <td><label class="style-label" id="mostrarManivelas">Manivelas:</label></td>
                     <img id="manivelasOculto" style="display: none;" src="../src/alerts/manivelas.png" alt="Imagen">
-                   <td><select name="manivelas">
+                   <td><select required name="manivelas">
                         <option></option>    
                             <option>Lado piloto</option>
                             <option>Lado copiloto</option>
                         </select>
                         <td><label class="style-label" id="mostrarPlaca">Placa gancho de arrastre: </label></td>
                         <img id="placaOculto" style="display: none;" src="../src/alerts/gancho.png" alt="Imagen">
-                       <td><select name="gancho_arrastre" style="width: 330px;">
+                       <td><select required name="gancho_arrastre" style="width: 330px;">
                         <option></option>
                         <option>Colocar placa sin gancho de arrastre</option>
                         <option>Colocar placa con gancho de arrastre Premier 2400(2 pulgadas 10 barrenos)
@@ -171,12 +207,12 @@
                     <td><label class="style-label" id="mostrarLlanta">LLantas: </label></td>
                     <img id="llantasOculto" style="display: none;" src="../src/alerts/llanta.png" alt="Imagen">
                      <td>
-                        <select name="llantas" id="llantas" onchange="actualizarRin()" style="width: 50px;">
+                        <select required name="llantas" id="llantas" onchange="actualizarRin()" style="width: 50px;">
                             <option></option>
                             <option value="8">8</option>
                         </select>
                         <label>Medida llanta</label>
-                        <select name="llanta_medida" id="medida_llanta" onchange="actualizarMedida()">
+                        <select required name="llanta_medida" id="medida_llanta" onchange="actualizarMedida()">
                             <option></option>
                             <option value="11R22.5">11R22.5</option>
                             <option value="11R24.5">11R24.5</option>
@@ -185,7 +221,7 @@
                     
                     <td><label class="style-label" id="mostrarPortallantas">Porllantas tipo canasta</label></td>
                     <img id="portallantasOculto" style="display: none;" src="../src/alerts/portallantas.png" alt="Imagen">
-                      <td><select name="porta_llantas">
+                      <td><select required name="porta_llantas">
                         <option></option>    
                         <option>1</option>
                         </select></td>
@@ -195,38 +231,35 @@
                     <td><label class="style-label" id="mostrarRin">Rin: </label></td>
                     <img id="rinOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
                   <td>
-                        <select name="rin" id="rin" style="width: 50px;">
+                        <select required name="rin" id="rin" style="width: 50px;">
                             <option></option>
                         </select>
                         <label>Medida rin</label>
-                        <select name="rin_medida" id="rin_medida">
+                        <select required name="rin_medida" id="rin_medida">
                             <option></option>
                         </select>
                     </td>
+                    <td><button type="submit">Enviar</button>
+                    </td>   
 
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarImagen">Material del Rin </label></td>
                     <img id="imagenOculta" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
                     <td>
-                        <select name="material_rin" id="material" onchange="actualizarBirlo()">
+                        <select required name="material_rin" id="material" onchange="actualizarBirlo()">
                             <option></option>
                             <option value="Acero">Acero</option>
                             <option value="Aluminio">Aluminio</option>
                         </select>
                         <label class="style-label" id="mostrarBirlo">Birlo: </label>
                         <img id="birloOculto" style="display: none;" src="../src/alerts/birlo.png" alt="Imagen">
-                            <select name="birlo" id="birlo">
+                            <select required name="birlo" id="birlo">
                                 <option></option>
                             </select>
                     </td>
                 </tr>   
-                <tr>
-                        <td><button type="submit">Enviar</button>
-                            <button type="reset">Borrar</button>
-                        </td>
-                    </td>
-                </tr>
+
             </table>
         </form>
     </div>

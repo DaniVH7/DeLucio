@@ -109,11 +109,36 @@ function generarPDFconId(cotizacionId) {
                                 width: 200, // Ancho de la imagen en puntos (ajusta según tus necesidades)
                             },
                             {
+                                text: "Portacontenedor Estandar",
+                                fontSize: 20, // Tamaño de fuente en puntos
+                            },
+                            {
+                                table: {
+                                    widths: ['*', '*', '*'],
+                                    headerRows: 1,
+                                    body: [
+                                        ["Nombre", "Correo", "Telefono"],
+                                        ...datos.map(row => [   
+                                            row.nombre,
+                                            row.correo,
+                                            row.telefono,
+                                            
+                                        ])
+                                    ],
+                                    
+                                }
+                            },
+                           
+                           {
+                                text: "",
+                                margin: [0, 5],
+                            }, 
+                            {
                                 table: {
                                     widths: ['*','*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["id_config","modelo", "configuracion", "color"],
+                                        ["Cotizacion No.","Modelo", "Configuracion", "Color"],
                                         ...datos.map(row => [
                                             row.id_config,
                                             row.modelo,
@@ -124,13 +149,18 @@ function generarPDFconId(cotizacionId) {
                                     
                                 }
                             },
+                           
+                           {
+                                text: "",
+                                margin: [0, 5],
+                            },
                             
                             {
                                 table: {
                                     widths: ['*', '*', '*'],                                    
                                     headerRows: 1,
                                     body: [
-                                        ["cabezal_frontal", "cabezal_trasero", "mensulas"],
+                                        ["Cabezal frontal", "Cabezal trasero", "Mensulas"],
                                         ...datos.map(row => [
                                             row.cabezal_frontal,
                                             row.cabezal_trasero,
@@ -146,7 +176,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*','*'],
                                     headerRows: 1,
                                     body: [
-                                        ["llantas", "llantamedida", "rin", "rinmedida", "material"],
+                                        ["Llantas", "Medida", "Rin", "Medida", "Material"],
                                         ...datos.map(row => [
                                             row.llantas,
                                             row.llantamedida,
@@ -158,11 +188,15 @@ function generarPDFconId(cotizacionId) {
                                 }
                             },
                             {
+                                text: "",
+                                margin: [0, 5],
+                            },
+                            {
                                 table: {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["birlo", "lubricacion", "patines", "gancho_arrastre"],
+                                        ["Birlo", "Lubricacion", "Patines de estacionamiento", "Gancho de arrastre"],
                                         ...datos.map(row => [
                                             row.birlo,
                                             row.lubricacion,
@@ -172,12 +206,17 @@ function generarPDFconId(cotizacionId) {
                                     ],
                                 }
                             },
+                           
+                           {
+                                text: "",
+                                margin: [0, 5],
+                            },
                             {
                                 table: {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["ejes", "porta_llantas", "perno_rey", "susp_neu"],
+                                        ["Ejes", "Porta llantas", "Perno rey", "Susp neumatica"],
                                         ...datos.map(row => [
                                             row.ejes,
                                             row.porta_llantas,
@@ -187,12 +226,17 @@ function generarPDFconId(cotizacionId) {
                                     ],
                                 }
                             },
+                           
+                           {
+                                text: "",
+                                margin: [0, 5],
+                            }, 
                             {
                                 table: {
                                     widths: ['*', '*', '*','*'],
                                     headerRows: 1,
                                     body: [
-                                        ["frenos_neu", "eje_retractil", "tipo","guarda"],
+                                        ["Frenos neumaticos", "Eje retractil", "Tipo","Guarda lateral"],
                                         ...datos.map(row => [
                                             row.frenos_neu,
                                             row.eje_retractil,
@@ -202,19 +246,26 @@ function generarPDFconId(cotizacionId) {
                                     ],
                                 }
                             },
+                           
+                           {
+                                text: "",
+                                margin: [0, 5],
+                            }, {
+                                text: "",
+                                margin: [0, 5],
+                            },
                             {
                                 table: {
-                                    widths: ['*', '*', '*','*'],
+                                    widths: ['*'],
                                     headerRows: 1,
                                     body: [
-                                        ["precio_total"],
+                                        ["Precio total"],
                                         ...datos.map(row => [
                                             row.precio_total,
                                         ])
                                     ],
                                 }
                             },
-                        
                         ],
                     };
                     pdfMake.createPdf(documentDefinition).download(`cotizacion_${cotizacionId}.pdf`);

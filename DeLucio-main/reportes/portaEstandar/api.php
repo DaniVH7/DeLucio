@@ -14,7 +14,7 @@ function obtener_datos_desde_mysql($cotizacionId) {
         die("Error de conexión a la base de da  tos: " . $conexion->connect_error);
     }
 
-    $consulta = "SELECT id_config,modelo,configuracion,color,cabezal_frontal,cabezal_trasero,mensulas,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,patines,gancho_arrastre,ejes,porta_llantas,perno_rey,susp_neu,frenos_neu,eje_retractil,tipo,guarda,precio_total FROM portaestandar WHERE id_config = $cotizacionId";
+    $consulta = "SELECT id_config,nombre,correo,telefono,modelo,configuracion,color,cabezal_frontal,cabezal_trasero,mensulas,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,patines,gancho_arrastre,ejes,porta_llantas,perno_rey,susp_neu,frenos_neu,eje_retractil,tipo,guarda,precio_total FROM portaestandar WHERE id_config = $cotizacionId";
     $resultado = $conexion->query($consulta);
 
     // Verificar si la consulta tuvo éxito

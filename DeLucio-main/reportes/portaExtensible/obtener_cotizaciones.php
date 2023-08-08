@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Consulta para obtener todas las cotizaciones disponibles
-$consulta = "SELECT id_config,modelo,color,cabezal_frontal,cabezal_trasero,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,ejes,portaloderas,perno_rey,patines,manivelas,gancho_arrastre,frenos_neu,susp_neu,eje_retractil,tipo,porta_llantas,susp_neu,precio_total FROM portaextensible";
+$consulta = "SELECT id_config,nombre,correo,telefono,modelo,color,cabezal_frontal,cabezal_trasero,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,ejes,portaloderas,perno_rey,patines,manivelas,gancho_arrastre,frenos_neu,susp_neu,eje_retractil,tipo,porta_llantas,susp_neu,precio_total FROM portaextensible";
 
 // Ejecutar la consulta
 $resultado = $conexion->query($consulta);

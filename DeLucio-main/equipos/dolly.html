@@ -28,7 +28,7 @@
     <header>
     <div class="escoge">
         <h1>Selecciona un formulario:</h1>
-        <select id="selectFormulario" onchange="abrirArchivo()" style="width: 200px;">
+        <select required id="selectFormulario" onchange="abrirArchivo()" style="width: 200px;">
             <option value="../index.html">Equipos</option>
             <option value="dolly.html" selected="selected">Dolly Tipo A</option>
             <option value="portaEstandar.html">Portacontenedor 40ft Estandar</option>
@@ -43,11 +43,21 @@
     </div>
     </header>
     <div class="form-container" id="opcion01">
-        <form action="../src/php/dolly.php" method="post">
+        <form id="dolly" action="../src/php/dolly.php" method="post">
             <table>
+                <tr>
+                    <tr>
+                        Datos personales:
+                    </tr>
+                    <tr>
+                        <input class="form" type="text" name="nombre" placeholder="Nombre completo">
+                        <input class="form" type="email" name="correo" placeholder="Correo electrónico">
+                        <input class="form" type="tel" name="telefono" placeholder="Número de teléfono">
+                    </tr>
+                </tr>
                 <td><label>Modelo: </a></td>
                 <td>
-                    <select name="modelo" id="modeloSelect">
+                    <select required name="modelo" id="modeloSelect">
                         <option></option>
                         <option value="2019">2019</option>
                         <option value="2020">2020</option>
@@ -62,7 +72,7 @@
                 <td><label class="style-label" id="mostrarImagen">Material: </label></td>
                 <img id="imagenOculta" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
                 <td>
-                  <select name="material_rin" id="material" onchange="actualizarBirlo()">
+                  <select required name="material_rin" id="material" onchange="actualizarBirlo()">
                     <option></option>
                     <option value="Acero">Acero</option>
                     <option value="Aluminio">Aluminio</option>
@@ -77,42 +87,42 @@
                 </tr>
                 <td><label>Alto: </a>
                 </td>
-                <td><select name="alto">
+                <td><select required name="alto">
                         <option></option>
                         <option value="Fijo">Fijo</option>
                     </select></td>
                 <td><label class="style-label" id="mostrarBirlo">Birlo: </a></td>
                 <img id="birloOculto" style="display: none;" src="../src/alerts/birlo.png" alt="Imagen">
                 <td>
-                    <select name="birlo" id="birlo"></select>
+                    <select required name="birlo" id="birlo"></select>
                     <option></option>
                 </td>
 
                 </tr>
                 <tr>
                     <td><label>Ancho: </a></td>
-                    <td><select name="ancho">
+                    <td><select required name="ancho">
                             <option></option>
 
                             <option value="2.60 m" data-precio="200">2.60 m</option>
                         </select></td>
                     <td><label class="style-label" id="mostrarEjes">Ejes:</a></td>
                     <img id="ejesOculta" style="display: none;" src="../src/alerts/" alt="Imagen">
-                    <td><select name="ejes">
+                    <td><select required name="ejes">
                             <option></option>
                             <option value="De 30,000 lbs, 77.5 pulgadas de Track">De 30,000 lbs, 77.5 pulgadas de Track</option>
                         </select> </td>
                 </tr>
                 <tr>
                     <td><label>Largo: </a></td>
-                    <td><select name="largo">
+                    <td><select required name="largo">
                             <option></option>
                             <option value="2.47 m">fijo (2.47m)</option>
 
                         </select></td>
                     <td><label class="style-label" id="mostrarLub">Lubricación: </a></td>
                     <img id="lubOculto" style="display: none;" src="../src/alerts/lub.png" alt="Imagen">
-                    <td><select name="lubricacion">
+                    <td><select required name="lubricacion">
                             <option></option>
                             <option value="Grasa">Grasa</option>
                             <option value="Aceite">Aceite</option>
@@ -124,7 +134,7 @@
                     <td><label class="style-label" id="mostrarOjillo">Ojillo tiron: </a></td>
                     <img id="ojilloOculta" style="display: none;" src="../src/alerts/ojillo tiron.png" alt="Imagen">
                     <td>
-                        <select name="ojillo_tiron" style="width: 300px;">
+                        <select required name="ojillo_tiron" style="width: 300px;">
                             <option></option>
 
                             <option value="Premier 245 DB (2 3/8 pulgadas para gancho Premier 2400)" data-precio=" 20">
@@ -145,7 +155,7 @@
                     </td>
                     <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </a></td>
                     <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
-                    <td><select name="susp_neumatica">
+                    <td><select required name="susp_neumatica">
                             <option></option>
                             <option value="Azteca King Ak-300 de 30,000 lbs de capacidad">Azteca King Ak-300 de
                                 30,000 lbs de capacidad</option>
@@ -157,7 +167,7 @@
                     <td><label class="style-label" id="mostrarLanza">Largo de lanza: </a></td>
                     <img id="lanzaOculta" style="display: none;" src="../src/alerts/" alt="Imagen">
                     <td>
-                        <select name="largo_lanza">
+                        <select required name="largo_lanza">
                             <option></option>
 
                             <option value=".60 m">.60 m</option>
@@ -171,7 +181,7 @@
                     <td><label class="style-label" id="mostrarPlacas">Portaplacas: </a></td>
                     <img id="placasOculta" style="display: none;" src="../src/alerts/portaplacas.png" alt="Imagen">
                     <td>
-                        <select name="porta_placas">
+                        <select required name="porta_placas">
                             <option></option>
 
                             <option value="Si">Si</option>
@@ -184,7 +194,7 @@
                     <td><label class="style-label" id="mostrarQuinta">Quinta rueda: </a></td>
                     <img id="QuintaOculta" style="display: none;" src="../src/alerts/quinta-rueda.png" alt="Imagen">
                     <td>
-                        <select name="quinta_rueda">
+                        <select required name="quinta_rueda">
                             <option></option>
 
                             <option value="Holland FW35">Holland FW35</option>
@@ -193,7 +203,7 @@
                     <td><label class="style-label" id="mostrarInflado">Auto inflado: </a></td>
                     <img id="placasOculta" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
                     <td>
-                        <select name="auto_inflado">
+                        <select required name="auto_inflado">
                             <option></option>
                             <option value="Si">Si</option>
                             <option value="No">No</option>
@@ -204,7 +214,7 @@
                 <tr>
                     <td><label>Altura de Quinta rueda: </a></td>
                     <td>
-                        <select name="altura_quinta">
+                        <select required name="altura_quinta">
                             <option></option>
 
                             <option value="6 pulgadas">6 Pulgadas</option>
@@ -213,7 +223,7 @@
                     </td>
                     <td><label class="style-label" id="mostrarLoderas">Porta loderas: </a></td>
                     <img id="loderaOculta" style="display: none;" src="../src/alerts/portaloderas.png" alt="Imagen">
-                    <td><select name="porta_loderas">
+                    <td><select required name="porta_loderas">
                             <option></option>
 
                             <option value="Si">Si</option>
@@ -223,14 +233,14 @@
                 </tr>
                 <tr>
                     <td><label>Soporte de quinta rueda: </a></td>
-                    <td><select name="soporte_quinta">
+                    <td><select required name="soporte_quinta">
                             <option></option>
                             <option value="Fijo">Fijo</option>
                         </select></td>
 
                     <td><label class="style-label" id="mostrarRetractil">Eje retractil: </a></td>
                     <img id="retractilOculta" style="display: none;" src="../src/alerts/retractil.jpg" alt="Imagen">
-                    <td><select name="eje_retractil">
+                    <td><select required name="eje_retractil">
                             <option></option>
 
                             <option value="Si">Si</option>
@@ -241,13 +251,13 @@
                 <tr>
                     <td><label class="style-label" id="mostrarLlanta">Llantas: </a></td>
                     <img id="llantaOculta" style="display: none;" src="../src/alerts/llanta.png" alt="Imagen">
-                    <td><select name="llantas" id="llantas" onchange="actualizarRin()">
+                    <td><select required name="llantas" id="llantas" onchange="actualizarRin()">
                             <option></option>
                             <option value="8">8</option>
                         </select>
 
                         <label>Medida llanta</a>
-                        <select name="llanta_medida" id="llanta_medida" onchange="actualizarMedida()">
+                        <select required name="llanta_medida" id="llanta_medida" onchange="actualizarMedida()">
                             <option></option>
                             <option>11R22.5</option>
                             <option>11R24.5</option>
@@ -259,23 +269,51 @@
                 <tr>
                     <td><label class="style-label" id="mostrarRin">Rin: </a></td>
                     <img id="rinOculta" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
-                    <td><select name="rin" id="rin">
+                    <td><select required name="rin" id="rin">
                             <option></option>
                         </select>
 
                         <label>Medida rin</a>
-                        <select name="rin_medida" id="rin_medida"></select>
+                        <select required name="rin_medida" id="rin_medida"></select>
                     </td>
                     </td>
                     <td>
-                        <button type="submit" value="Enviar este formulario">Enviar Formulario</button>
+                            <button type="submit">Enviar</button>
+                        </form>
                     </td>
                 </tr>
 
             </table>
         </form>
     </div>
-    <script src="../src/js/scriptsdDolly.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        document.getElementById('dolly').addEventListener('submit', function(event) {
+            event.preventDefault();
 
-</body>
+            // Obtener los valores de los campos
+            const nombre = document.getElementsByName('nombre')[0].value;
+            const correo = document.getElementsByName('correo')[0].value;
+            const telefono = document.getElementsByName('telefono')[0].value;
+
+            // Verificar si los campos están llenados
+            if (nombre === '' || correo === '' || telefono === '') {
+                Swal.fire({
+                    title: 'Completa tus datos de contacto',
+                    text: 'Por favor, completa todos los campos requeridos',
+                    icon: 'error',
+                    confirmButtonText: 'Cerrar'
+                });
+            }else{
+                // Enviar el formulario
+                this.submit();
+            }
+            
+
+        });
+    });
+</script>
+
+    <script src="../src/js/scriptsdDolly.js"></script>
+    </body>
 </html>

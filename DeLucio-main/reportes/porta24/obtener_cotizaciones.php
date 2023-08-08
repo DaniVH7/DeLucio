@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Consulta para obtener todas las cotizaciones disponibles
-$consulta = "SELECT id_config,modelo,color,cabezal_frontal,cabezal_trasero,mensulas,patines,manivelas,llantas,llantamedida,rin,rinmedida,material,birlo,perno_rey,ejes,no_ejes,frenos_neu,susp_neu,eje_retractil,tipo,gancho_arrastre,porta_llantas,precio_total FROM porta24";
+$consulta = "SELECT id_config,nombre,correo,telefono,modelo,color,cabezal_frontal,cabezal_trasero,mensulas,patines,manivelas,llantas,llantamedida,rin,rinmedida,material,birlo,perno_rey,ejes,no_ejes,frenos_neu,susp_neu,eje_retractil,tipo,gancho_arrastre,porta_llantas,precio_total FROM porta24";
 
 // Ejecutar la consulta
 $resultado = $conexion->query($consulta);
