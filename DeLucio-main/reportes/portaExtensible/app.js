@@ -106,7 +106,20 @@ function generarPDFconId(cotizacionId) {
                 .then(dataURL => {
                    const documentDefinition = {
                     pageOrientation: 'portrait', // Orientación de la página
-    pageSize: 'A4', // Tamaño de la página
+                    pageSize: 'A4', // Tamaño de la página
+                    background: function (currentPage, pageSize) {
+                        const imageWidth = pageSize.width; // Ancho de la página
+                        const imageHeight = pageSize.height; // Alto de la página
+                        const marginTop = (pageSize.height - imageHeight) / 2;
+                    
+                        return {
+                            image: dataURL,
+                            width: imageWidth,
+                            height: imageHeight,
+                            margin: [0, marginTop],
+                            opacity: 0.5, // Opacidad de la imagen de fondo
+                        };
+                    },
                    
                     content: [
                             {
@@ -258,15 +271,6 @@ function generarPDFconId(cotizacionId) {
                             },
                         
                         ],
-                        background: function (currentPage, pageSize) {
-                            return {
-                                image: dataURL,
-                                width: pageSize.width,
-                                height: pageSize.height,
-                                absolutePosition: {x: 0, y: 0}, // Posición absoluta
-                                opacity: 0.5 // Opacidad de la imagen de fondo
-                            };
-                        },
                         
                     };
                     pdfMake.createPdf(documentDefinition).download(`cotizacion_${cotizacionId}.pdf`);

@@ -102,11 +102,23 @@ function generarPDFconId(cotizacionId) {
             loadImageAsDataURL(logoUrl)
                 .then(dataURL => {
                    const documentDefinition = {
+                    pageOrientation: 'portrait', // Orientación de la página
+                    pageSize: 'A4', // Tamaño de la página
+                    background: function (currentPage, pageSize) {
+                        const imageWidth = pageSize.width; // Ancho de la página
+                        const imageHeight = pageSize.height; // Alto de la página
+                        const marginTop = (pageSize.height - imageHeight) / 2;
+                    
+                        return {
+                            image: dataURL,
+                            width: imageWidth,
+                            height: imageHeight,
+                            margin: [0, marginTop],
+                            opacity: 0.5, // Opacidad de la imagen de fondo
+                        };
+                    },
                         content: [
-                            {
-                                image: dataURL,
-                                width: 200, // Ancho de la imagen en puntos (ajusta según tus necesidades)
-                            },
+                            
                             {
                                 table: {
                                     widths: ['*','*', '*'],
@@ -121,6 +133,10 @@ function generarPDFconId(cotizacionId) {
                                     ],
                                     
                                 }
+                            },
+                            {
+                                text: "",
+                                margin: [0, 5],
                             },
                             
                             {
@@ -140,6 +156,10 @@ function generarPDFconId(cotizacionId) {
                                
                             },
                             {
+                                text: "",
+                                margin: [0, 5],
+                            },
+                            {
                                 table: {
                                     widths: ['*','*', '*','*'],                                    
                                     headerRows: 1,
@@ -156,6 +176,10 @@ function generarPDFconId(cotizacionId) {
                                
                             },
                             {
+                                text: "",
+                                margin: [0, 5],
+                            },
+                            {
                                 table: {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
@@ -169,6 +193,10 @@ function generarPDFconId(cotizacionId) {
                                         ])
                                     ],
                                 }
+                            },
+                            {
+                                text: "",
+                                margin: [0, 5],
                             },
                             {
                                 table: {
@@ -187,6 +215,10 @@ function generarPDFconId(cotizacionId) {
                                 }
                             },
                             {
+                                text: "",
+                                margin: [0, 5],
+                            },
+                            {
                                 table: {
                                     widths: ['*', '*','*', '*'],
                                     headerRows: 1,
@@ -199,6 +231,10 @@ function generarPDFconId(cotizacionId) {
                                         ])
                                     ],
                                 }
+                            },
+                            {
+                                text: "",
+                                margin: [0, 5],
                             },
                             {
                                 table: {
@@ -214,6 +250,10 @@ function generarPDFconId(cotizacionId) {
                                 }
                             },
                             {
+                                text: "",
+                                margin: [0, 5],
+                            },
+                            {
                                 table: {
                                     widths: ['*'],
                                     headerRows: 1,
@@ -224,6 +264,10 @@ function generarPDFconId(cotizacionId) {
                                         ])
                                     ],
                                 }
+                            },
+                            {
+                                text: "",
+                                margin: [0, 5],
                             },
                         
                         ],
