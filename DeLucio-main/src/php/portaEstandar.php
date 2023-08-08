@@ -1,4 +1,7 @@
 <?php
+$nombre = $_POST["nombre"];
+$email = $_POST["correo"];
+$telefono = $_POST["telefono"];
     $modelo = (int)$_POST["modelo"];
     $color = htmlspecialchars($_POST["color"]);
     $configuracion = htmlspecialchars($_POST["config"]);
@@ -142,8 +145,8 @@ if ($conexion->connect_error) {
 }
 
 // Ejemplo de inserción de datos en una tabla "cotizaciones"
-$sql = "INSERT INTO portaestandar (modelo,configuracion,color,cabezal_frontal,cabezal_trasero,mensulas,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,patines,gancho_arrastre,ejes,porta_llantas,perno_rey,susp_neu,frenos_neu,eje_retractil,tipo,guarda,precio_total) 
-VALUES ('$modelo','$configuracion', '$color','$cabezal_frontal','$cabezal_trasero','$mensulas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$lubricacion','$patines','$gancho_arrastre','$ejes','$porta_llantas','$perno_rey','$susp_neu','$frenos_neu','$eje_retractil','$tipo','$guarda','$precioTotal')";
+$sql = "INSERT INTO portaestandar (nombre,correo,telefono,modelo,configuracion,color,cabezal_frontal,cabezal_trasero,mensulas,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,patines,gancho_arrastre,ejes,porta_llantas,perno_rey,susp_neu,frenos_neu,eje_retractil,tipo,guarda,precio_total) 
+VALUES ('$nombre','$email','$telefono','$modelo','$configuracion', '$color','$cabezal_frontal','$cabezal_trasero','$mensulas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$lubricacion','$patines','$gancho_arrastre','$ejes','$porta_llantas','$perno_rey','$susp_neu','$frenos_neu','$eje_retractil','$tipo','$guarda','$precioTotal')";
 
 if ($conexion->query($sql) === TRUE) {
     header("Location:../html/enviado.html");

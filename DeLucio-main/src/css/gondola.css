@@ -7,7 +7,12 @@ input,select {
     display: inline-block;
     position: relative;
   }
-  
+  .form{
+    margin-top: 2%;
+    margin-left: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+    font-size: 14px;
+  }
   /* Estilos para el input,select */
   input,select {
   background-repeat: no-repeat;

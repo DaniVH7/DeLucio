@@ -2,7 +2,9 @@
 // procesar_formulario.php
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recibir datos del formulario
+    $nombre = $_POST["nombre"];
+    $email = $_POST["correo"];
+    $telefono = $_POST["telefono"];
     $modelo = $_POST["modelo"];
     $color = $_POST["color"];
     $alto = $_POST["alto"];
@@ -161,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     
     // Ejemplo de inserción de datos en una tabla "cotizaciones"
-    $sql = "INSERT INTO dolly (modelo,color,alto,ancho,largo,ojillo,largodelanza,quinta,alturaquinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total) VALUES ('$modelo','$color','$alto', '$ancho', '$largo', '$ojillo_tiron', '$largo_lanza', '$quinta_rueda', '$altura_quinta', '$soporte_quinta', '$llantas', '$llanta_medida', '$rin', '$rin_medida', '$material_rin', '$ejes', '$birlo', '$lubricacion', '$susp_neumatica','$porta_placas','$auto_inflado', '$porta_loderas', '$eje_retractil', '$precioTotal')";
+    $sql = "INSERT INTO dolly (nombre,correo,telefono,modelo,color,alto,ancho,largo,ojillo,largodelanza,quinta,alturaquinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total) VALUES ('$nombre','$email','$telefono','$modelo','$color','$alto', '$ancho', '$largo', '$ojillo_tiron', '$largo_lanza', '$quinta_rueda', '$altura_quinta', '$soporte_quinta', '$llantas', '$llanta_medida', '$rin', '$rin_medida', '$material_rin', '$ejes', '$birlo', '$lubricacion', '$susp_neumatica','$porta_placas','$auto_inflado', '$porta_loderas', '$eje_retractil', '$precioTotal')";
     
     if ($conexion->query($sql) === TRUE) {
         header("Location:../html/enviado.html");

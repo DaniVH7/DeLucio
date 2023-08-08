@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Consulta para obtener todas las cotizaciones disponibles
-$consulta = "SELECT id_config,modelo,color,cabezal_frontal,cabezal_trasero,piso,mensulas_centrales,manivelas,llantas,llantamedida,rin,rinmedida,material,gancho_arrastre,perno_rey,porta_llantas,caja_herramientas,susp_neu,ejes,frenos_neu,eje_retractil,guarda,precio_total FROM multimodal";
+$consulta = "SELECT id_config,nombre,correo,telefono,modelo,color,cabezal_frontal,cabezal_trasero,piso,mensulas_centrales,manivelas,llantas,llantamedida,rin,rinmedida,material,gancho_arrastre,perno_rey,porta_llantas,caja_herramientas,susp_neu,ejes,frenos_neu,eje_retractil,guarda,precio_total FROM multimodal";
 
 // Ejecutar la consulta
 $resultado = $conexion->query($consulta);

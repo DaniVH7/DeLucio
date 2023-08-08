@@ -1,4 +1,7 @@
 <?php
+$nombre = $_POST["nombre"];
+$email = $_POST["correo"];
+$telefono = $_POST["telefono"];
     $modelo = (int)$_POST["modelo"];
     $color = htmlspecialchars($_POST["color"]);
     $cabezal_frontal = htmlspecialchars($_POST["cabezal_frontal"]);
@@ -140,8 +143,8 @@ if ($conexion->connect_error) {
 }
 
 // Ejemplo de inserción de datos en una tabla "cotizaciones"
-$sql = "INSERT INTO multimodal (modelo,color,cabezal_frontal,cabezal_trasero,piso,mensulas_centrales,manivelas,llantas,llantamedida,rin,rinmedida,material,gancho_arrastre,perno_rey,porta_llantas,caja_herramientas,susp_neu,ejes,frenos_neu,eje_retractil,guarda,precio_total) 
-VALUES ('$modelo', '$color','$cabezal_frontal','$cabezal_trasero', '$piso', '$mensulas_centrales','$manivelas', '$llantas','$medida', '$rin', '$rin_medida', '$material', '$gancho_arrastre', '$perno_rey','$porta_llantas', '$caja_herramientas', '$susp_neu','$ejes','$frenos_neu', '$eje_retractil', '$guarda','$precioTotal')";
+$sql = "INSERT INTO multimodal (nombre,correo,telefono,modelo,color,cabezal_frontal,cabezal_trasero,piso,mensulas_centrales,manivelas,llantas,llantamedida,rin,rinmedida,material,gancho_arrastre,perno_rey,porta_llantas,caja_herramientas,susp_neu,ejes,frenos_neu,eje_retractil,guarda,precio_total) 
+VALUES ('$nombre','$email','$telefono','$modelo', '$color','$cabezal_frontal','$cabezal_trasero', '$piso', '$mensulas_centrales','$manivelas', '$llantas','$medida', '$rin', '$rin_medida', '$material', '$gancho_arrastre', '$perno_rey','$porta_llantas', '$caja_herramientas', '$susp_neu','$ejes','$frenos_neu', '$eje_retractil', '$guarda','$precioTotal')";
 
 if ($conexion->query($sql) === TRUE) {
     header("Location:../html/enviado.html");

@@ -20,7 +20,13 @@ input,select {
   color: #333;
   }
 
-
+  .form{
+    margin-top: 2%;
+    margin-left: 2%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+    font-size: 14px;
+  }
+  
   select:focus, select:hover {
     border-color: #D9D9D9   ;
     outline: none;

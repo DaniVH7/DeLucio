@@ -70,3 +70,10 @@ input,select {
   font-size: 25px;
   box-shadow: 5px 3px 3px red;
 }
+
+.form{
+  margin-top: 2%;
+  margin-left: 2%;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 10);
+  font-size: 14px;
+}

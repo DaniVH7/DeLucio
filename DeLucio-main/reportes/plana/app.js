@@ -108,11 +108,31 @@ function generarPDFconId(cotizacionId) {
                                 width: 200, // Ancho de la imagen en puntos (ajusta según tus necesidades)
                             },
                             {
+                                text: "Plataforma tipo plana",
+                                fontSize: 20, // Tamaño de fuente en puntos
+                            },
+                            {
+                                table: {
+                                    widths: ['*', '*', '*'],
+                                    headerRows: 1,
+                                    body: [
+                                        ["Nombre", "Correo", "Telefono"],
+                                        ...datos.map(row => [   
+                                            row.nombre,
+                                            row.correo,
+                                            row.telefono,
+                                            
+                                        ])
+                                    ],
+                                    
+                                }
+                            },
+                            {
                                 table: {
                                     widths: ['*','*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["id_config","modelo", "color"],
+                                        ["Cotizacion No.","Modelo", "Color"],
                                         ...datos.map(row => [
                                             row.id_config,
                                             row.modelo,
@@ -128,7 +148,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*','*'],                                    
                                     headerRows: 1,
                                     body: [
-                                        ["largo","piso", "patines"],
+                                        ["Largo","Piso", "Patines de estacionamiento"],
                                         ...datos.map(row => [
                                             row.largo,
                                             row.piso,
@@ -143,7 +163,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*','*'],
                                     headerRows: 1,
                                     body: [
-                                        ["llantas", "medida", "rin", "rin_medida", "material"],
+                                        ["Llantas", "Medida", "Rin", "Medida", "Material"],
                                         ...datos.map(row => [
                                             row.llantas,
                                             row.medida,
@@ -159,7 +179,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["frenos_neu", "frente_lam", "loderas", "guarda"],
+                                        ["Frenos Neumaticos", "Frente laminado", "Loderas", "Guarda lateral"],
                                         ...datos.map(row => [
                                             row.frenos_neu,
                                             row.frente_lam,
@@ -174,7 +194,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["ejes", "perno_rey", "manivelas", "susp_neu"],
+                                        ["Ejes", "Perno rey", "Manivelas", "Suspension neumatica"],
                                         ...datos.map(row => [
                                             row.ejes,
                                             row.perno_rey,
@@ -189,7 +209,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*','*','*'],
                                     headerRows: 1,
                                     body: [
-                                        ["matracas", "caja_herramientas", "letrero","placa_perso"],
+                                        ["Matracas", "Caja de herramientas", "Letrero","Placa personalizada"],
                                         ...datos.map(row => [
                                             row.matracas,
                                             row.caja_herramientas,
@@ -204,7 +224,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*'],
                                     headerRows: 1,
                                     body: [
-                                        ["precio_total"],
+                                        ["Precio total"],
                                         ...datos.map(row => [
                                             row.precio_total,
                                         ])

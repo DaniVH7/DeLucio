@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Consulta para obtener todas las cotizaciones disponibles
-$consulta = "SELECT id_config,color,alto,ancho,largo,ojillo,largodelanza,quinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total FROM dolly";
+$consulta = "SELECT id_config,nombre,correo,telefono,color,alto,ancho,largo,ojillo,largodelanza,quinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total FROM dolly";
 
 // Ejecutar la consulta
 $resultado = $conexion->query($consulta);

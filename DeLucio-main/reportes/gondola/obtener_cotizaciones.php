@@ -8,7 +8,7 @@ if ($conexion->connect_error) {
 }
 
 // Consulta para obtener todas las cotizaciones disponibles
-$consulta = "SELECT id_config,modelo,color,capacidad,alto,ancho,largo,patines,manivelas,llantas,medida,rin,rin_medida,material,birlo,caja_herramientas,letrero,perno_rey,porta_llantas,gancho_arrastre,no_ejes,ejes,placa_perso,susp_neu,eje_retractil,tipo,frenos_neu,guarda,autoinflado,precio_total FROM gondola";
+$consulta = "SELECT id_config,nombre,correo,telefono,modelo,color,capacidad,alto,ancho,largo,patines,manivelas,llantas,medida,rin,rin_medida,material,birlo,caja_herramientas,letrero,perno_rey,porta_llantas,gancho_arrastre,no_ejes,ejes,placa_perso,susp_neu,eje_retractil,tipo,frenos_neu,guarda,autoinflado,precio_total FROM gondola";
 
 // Ejecutar la consulta
 $resultado = $conexion->query($consulta);

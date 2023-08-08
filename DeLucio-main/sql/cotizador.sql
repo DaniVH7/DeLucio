@@ -1,5 +1,8 @@
 CREATE TABLE caja (
   id_config int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   color varchar(100) DEFAULT NULL,
   frente_exterior varchar(250) DEFAULT NULL,
@@ -28,6 +31,9 @@ CREATE TABLE caja (
 
 CREATE TABLE dolly (
   id_config int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
   alto varchar(10) DEFAULT NULL,
@@ -55,6 +61,9 @@ CREATE TABLE dolly (
 ) ;
 CREATE TABLE portaestandar (
   id_config int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   configuracion varchar(10) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
@@ -84,6 +93,9 @@ CREATE TABLE portaestandar (
 
 CREATE TABLE porta24 (
   id_config int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
   cabezal_frontal varchar(400) DEFAULT NULL,
@@ -111,6 +123,9 @@ CREATE TABLE porta24 (
 
 CREATE TABLE gondola (
   id_config int(11) NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(10) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
   capacidad varchar(20) DEFAULT NULL,
@@ -143,6 +158,9 @@ CREATE TABLE gondola (
 ) ;
 CREATE TABLE multimodal (
   id_config int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
   cabezal_frontal varchar(200) DEFAULT NULL,
@@ -168,6 +186,9 @@ CREATE TABLE multimodal (
 ) ;
 CREATE TABLE plana (
   id_config int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(10) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
   largo varchar(100) DEFAULT NULL,
@@ -195,6 +216,9 @@ CREATE TABLE plana (
 ) ;
 CREATE TABLE portaextensible (
   id_config int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
   cabezal_frontal varchar(350) DEFAULT NULL,
@@ -222,15 +246,19 @@ CREATE TABLE portaextensible (
 
 CREATE TABLE tolva (
   id_config int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  telefono varchar(25) NOT NULL, 
   modelo int(6) DEFAULT NULL,
   color varchar(50) DEFAULT NULL,
-  capacidad varchar(20) DEFAULT NULL,
-  tuberia_presurizada varchar(200) DEFAULT NULL,
-  tuberia_descarga varchar(10) DEFAULT NULL,
+  capacidad varchar(500) DEFAULT NULL,
+  tuberia_presurizada varchar(500) DEFAULT NULL,
+  tuberia_descarga varchar(500) DEFAULT NULL,
   llantas varchar(10) DEFAULT NULL,
   llantamedida varchar(25) DEFAULT NULL,
   rin varchar(25) DEFAULT NULL,
   rinmedida varchar(25) DEFAULT NULL,
+  material_rin varchar(60) DEFAULT NULL,
   patines varchar(250) DEFAULT NULL,
   gancho_arrastre varchar(250) DEFAULT NULL,
   porta_llantas varchar(250) DEFAULT NULL,
@@ -249,3 +277,11 @@ CREATE TABLE tolva (
   auto_inflado varchar(100) DEFAULT NULL,
   precio_total varchar(1000) NOT NULL
 ) ;
+
+CREATE TABLE usuarios (
+  id_usuario int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre varchar(100) NOT NULL,
+  correo varchar(250) NOT NULL,
+  password varchar(250) NOT NULL
+) ;
+

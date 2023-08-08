@@ -1,5 +1,8 @@
 <?php
-            $modelo = (int)$_POST["modelo"];
+$nombre = $_POST["nombre"];
+$email = $_POST["correo"];
+$telefono = $_POST["telefono"];
+$modelo = (int)$_POST["modelo"];
             $color = htmlspecialchars($_POST["color"]);
             $largo = htmlspecialchars($_POST["largo"]);
             $piso = htmlspecialchars($_POST["piso"]);
@@ -172,7 +175,7 @@
     }
     
     // Ejemplo de inserción de datos en una tabla "cotizaciones"
-    $sql = "INSERT INTO plana (modelo,color,largo,piso,patines,llantas,medida,rin,rin_medida,material,frenos_neu,frente_lam,loderas,guarda,ejes,perno_rey,manivelas,gancho_arrastre,susp_neu,matracas,caja_herramientas,letrero,placa_perso,precio_total) VALUES ('$modelo', '$color', '$largo', '$piso', '$patines','$llantas', '$medida', '$rin', '$rin_medida', '$material', '$frenos_neu', '$frente_lam', '$loderas', '$guarda','$ejes','$perno_rey', '$manivelas', '$gancho_arrastre','$susp_neu','$matracas','$caja_herramientas','$letrero','$placa_perso', '$precioTotal')";
+    $sql = "INSERT INTO plana (nombre,correo,telefono,modelo,color,largo,piso,patines,llantas,medida,rin,rin_medida,material,frenos_neu,frente_lam,loderas,guarda,ejes,perno_rey,manivelas,gancho_arrastre,susp_neu,matracas,caja_herramientas,letrero,placa_perso,precio_total) VALUES ('$nombre','$email','$telefono','$modelo', '$color', '$largo', '$piso', '$patines','$llantas', '$medida', '$rin', '$rin_medida', '$material', '$frenos_neu', '$frente_lam', '$loderas', '$guarda','$ejes','$perno_rey', '$manivelas', '$gancho_arrastre','$susp_neu','$matracas','$caja_herramientas','$letrero','$placa_perso', '$precioTotal')";
     
     if ($conexion->query($sql) === TRUE) {
         header("Location:../html/enviado.html");

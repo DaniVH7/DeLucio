@@ -1,4 +1,7 @@
 <?php
+$nombre = $_POST["nombre"];
+$email = $_POST["correo"];
+$telefono = $_POST["telefono"];
     $modelo = (int)$_POST["modelo"];
     $color = htmlspecialchars($_POST["color"]);
     $cabezal_frontal = htmlspecialchars($_POST["cabezal_frontal"]);
@@ -136,8 +139,8 @@ if ($conexion->connect_error) {
 
 // Ejemplo de inserción de datos en una tabla "cotizaciones"
 
-$sql = "INSERT INTO porta24 (modelo, color, cabezal_frontal, cabezal_trasero, mensulas, patines, manivelas, llantas, llantamedida, rin, rinmedida, material, birlo, perno_rey, ejes, no_ejes, frenos_neu, susp_neu, eje_retractil, tipo, gancho_arrastre, porta_llantas, precio_total)
-VALUES ('$modelo','$color','$cabezal_frontal','$cabezal_trasero','$mensulas','$patines','$manivelas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$perno_rey','$ejes','$no_ejes','$frenos_neu','$susp_neu','$eje_retractil','$tipo','$gancho_arrastre','$porta_llantas','$precioTotal')";
+$sql = "INSERT INTO porta24 (nombre,correo,telefono,modelo, color, cabezal_frontal, cabezal_trasero, mensulas, patines, manivelas, llantas, llantamedida, rin, rinmedida, material, birlo, perno_rey, ejes, no_ejes, frenos_neu, susp_neu, eje_retractil, tipo, gancho_arrastre, porta_llantas, precio_total)
+VALUES ('$nombre','$email','$telefono','$modelo','$color','$cabezal_frontal','$cabezal_trasero','$mensulas','$patines','$manivelas','$llantas','$medida','$rin','$rin_medida','$material','$birlo','$perno_rey','$ejes','$no_ejes','$frenos_neu','$susp_neu','$eje_retractil','$tipo','$gancho_arrastre','$porta_llantas','$precioTotal')";
 
 $stmt = $conexion->prepare($sql);
 if (!$stmt) {

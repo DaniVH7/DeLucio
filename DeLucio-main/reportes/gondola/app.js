@@ -108,11 +108,31 @@ function generarPDFconId(cotizacionId) {
                                 width: 200, // Ancho de la imagen en puntos (ajusta según tus necesidades)
                             },
                             {
+                                text: "Volteo tipo Gondola",
+                                fontSize: 20, // Tamaño de fuente en puntos
+                            },
+                            {
+                                table: {
+                                    widths: ['*', '*', '*'],
+                                    headerRows: 1,
+                                    body: [
+                                        [ "Nombre", "Correo", "Telefono"],
+                                        ...datos.map(row => [   
+                                            row.nombre,
+                                            row.correo,
+                                            row.telefono,
+                                            
+                                        ])
+                                    ],
+                                    
+                                }
+                            },
+                            {
                                 table: {
                                     widths: ['*','*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["id_config","modelo", "color"],
+                                        ["Cotizacion No","modelo", "color"],
                                         ...datos.map(row => [
                                             row.id_config,
                                             row.modelo,
@@ -128,7 +148,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*','*', '*','*'],                                    
                                     headerRows: 1,
                                     body: [
-                                        ["capacidad","alto", "ancho","largo"],
+                                        ["Capacidad","Alto", "Ancho","Largo"],
                                         ...datos.map(row => [
                                             row.capacidad,
                                             row.alto,
@@ -144,7 +164,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["patines", "manivelas"],
+                                        ["Patines de estacionamiento", "Manivelas"],
                                         ...datos.map(row => [
                                             row.patines,
                                             row.manivelas
@@ -157,7 +177,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*','*'],
                                     headerRows: 1,
                                     body: [
-                                        ["llantas", "medida", "rin", "rin_medida", "material"],
+                                        ["Llantas", "Medida", "Rin", "Medida del rin", "Material"],
                                         ...datos.map(row => [
                                             row.llantas,
                                             row.medida,
@@ -173,7 +193,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["birlo", "caja_herramientas", "letrero", "perno_rey"],
+                                        ["Birlo", "Caja de herramientas", "Letrero", "Perno rey"],
                                         ...datos.map(row => [
                                             row.birlo,
                                             row.caja_herramientas,
@@ -189,7 +209,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*','*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["porta_llantas", "gancho_arrastre","no_ejes","ejes"],
+                                        ["Porta llantas", "Gancho de arrastre","No. ejes","Ejes"],
                                         ...datos.map(row => [
                                             row.porta_llantas,
                                             row.gancho_arrastre,
@@ -204,7 +224,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["placa_perso", "susp_neu", "eje_retractil","tipo"],
+                                        ["Placa personalizada", "Suspension neumatica", "Eje retractil","Tipo"],
                                         ...datos.map(row => [
                                             row.placa_perso,
                                             row.susp_neu,
@@ -219,7 +239,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["frenos_neu", "guarda", "autoinflado"],
+                                        ["Frenos neumaticos", "Guarda lateral", "Auto inflado"],
                                         ...datos.map(row => [
                                             row.frenos_neu,
                                             row.guarda,
@@ -233,7 +253,7 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*'],
                                     headerRows: 1,
                                     body: [
-                                        ["precio_total"],
+                                        ["Precio total"],
                                         ...datos.map(row => [
                                             row.precio_total,
                                         ])

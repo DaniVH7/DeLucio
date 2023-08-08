@@ -1,4 +1,7 @@
 <?php
+$nombre = $_POST["nombre"];
+$email = $_POST["correo"];
+$telefono = $_POST["telefono"];
     $modelo = (int)$_POST["modelo"];
     $color = htmlspecialchars($_POST["color"]);
     $cabezal_frontal = htmlspecialchars($_POST["cabezal_frontal"]);
@@ -138,8 +141,9 @@ if ($conexion->connect_error) {
 }
 
 // Ejemplo de inserción de datos en una tabla "cotizaciones"
-$sql = "INSERT INTO portaextensible (modelo,color,cabezal_frontal,cabezal_trasero,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,ejes,portaloderas,perno_rey,patines,manivelas,gancho_arrastre,frenos_neu,eje_retractil,tipo,porta_llantas,susp_neu,precio_total) 
+$sql = "INSERT INTO portaextensible (nombre,correo,telefono,modelo,color,cabezal_frontal,cabezal_trasero,llantas,llantamedida,rin,rinmedida,material,birlo,lubricacion,ejes,portaloderas,perno_rey,patines,manivelas,gancho_arrastre,frenos_neu,eje_retractil,tipo,porta_llantas,susp_neu,precio_total) 
 VALUES (
+    '$nombre','$email','$telefono',
     '$modelo',
     '$color',
     '$cabezal_frontal',

@@ -1,4 +1,7 @@
 <?php
+$nombre = $_POST["nombre"];
+$email = $_POST["correo"];
+$telefono = $_POST["telefono"];
             $modelo = (int)$_POST["modelo"];
             $color = htmlspecialchars($_POST["color"]);
             $capacidad = htmlspecialchars($_POST["capacidad"]);
@@ -165,7 +168,7 @@
 if ($conexion->connect_error) {
     die("Error al conectar a la base de datos: " . $conexion->connect_error);
 }
-$sql = "INSERT INTO tolva (modelo,color,capacidad,tuberia_presurizada,tuberia_descarga,llantas,llantamedida,rin,rinmedida,material_rin,patines,gancho_arrastre,porta_llantas,precaucion,perno_rey,placa_perso,no_ejes,ejes,birlo,lubricacion,retractil,tipo,susp_neu,frenos_neu,guarda_lateral,auto_inflado,precio_total) VALUES ('$modelo', 
+$sql = "INSERT INTO tolva (nombre,correo,telefono,modelo,color,capacidad,tuberia_presurizada,tuberia_descarga,llantas,llantamedida,rin,rinmedida,material_rin,patines,gancho_arrastre,porta_llantas,precaucion,perno_rey,placa_perso,no_ejes,ejes,birlo,lubricacion,retractil,tipo,susp_neu,frenos_neu,guarda_lateral,auto_inflado,precio_total) VALUES ('$nombre','$email','$telefono','$modelo', 
 '$color', '$capacidad', '$tuberiaPres', '$tuberiaDes', '$llantas', '$medida', '$rin', '$rin_medida', '$material', '$patines', '$gancho', '$portallantas', '$precaucion', '$perno_rey', '$placa_perso', '$no_ejes', '$ejes', '$birlo', '$lub', '$retractil', '$tipo', '$susp_neu', '$frenos_neu', '$guarda', '$auto_inflado', '$precioTotal')";
 if ($conexion->query($sql) === TRUE) {
     header("Location:../html/enviado.html");

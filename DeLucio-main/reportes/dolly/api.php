@@ -14,7 +14,7 @@ function obtener_datos_desde_mysql($cotizacionId) {
         die("Error de conexión a la base de datos: " . $conexion->connect_error);
     }
 
-    $consulta = "SELECT id_config,color,alto,ancho,largo,ojillo,largodelanza,quinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total FROM dolly WHERE id_config = $cotizacionId";
+    $consulta = "SELECT id_config,nombre,correo,telefono,color,alto,ancho,largo,ojillo,largodelanza,quinta,soportequinta,llantas,llantamedida,rin,rinmedida,material_rin,ejes,birlos,lubricacion,suspension,portaplacas,autoinflado,portaloderas,retractil,precio_total FROM dolly WHERE id_config = $cotizacionId";
     $resultado = $conexion->query($consulta);
 
     // Verificar si la consulta tuvo éxito

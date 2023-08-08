@@ -105,6 +105,26 @@ function generarPDFconId(cotizacionId) {
                                 width: 200, // Ancho de la imagen en puntos (ajusta según tus necesidades)
                             },
                             {
+                                text: "Dolly tipo A",
+                                fontSize: 20, // Tamaño de fuente en puntos
+                            },
+                            {
+                                table: {
+                                    widths: [100, 70, '*', '*'],
+                                    headerRows: 1,
+                                    body: [
+                                        ["Cotizacion no.1", "Nombre", "Correo", "Telefono"],
+                                        ...datos.map(row => [   
+                                            row.id_config,
+                                            row.nombre,
+                                            row.correo,
+                                            row.telefono,
+                                            
+                                        ])
+                                    ],
+                                    
+                                }
+                            },{
                                 table: {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
@@ -124,10 +144,9 @@ function generarPDFconId(cotizacionId) {
                             {
                                 table: {
                                     widths: ['*', '*', '*', '*','*'],
-                                    margin: [10, 10, 0, 0], // Margen superior, derecho, inferior, izquierdo (en puntos).
                                     headerRows: 1,
                                     body: [
-                                        ["llantas", "llantamedida", "rin", "rinmedida", "material_rin"],
+                                        ["cantidad de Llantas", "Medida de llanta", "Rines", "Medida de rin", "Material del rin"],
                                         ...datos.map(row => [
                                             row.llantas,
                                             row.llantamedida,
@@ -136,26 +155,15 @@ function generarPDFconId(cotizacionId) {
                                             row.material_rin,
                                         ])
                                     ],
-                                    margin: [0, 10, 0, 0], // Margen superior de 10 puntos para la primera tabla.
                                 },
                                
                             },
                             {
                                 table: {
-                                    widths: ['*', '*', '*', '*','*'],
-                                    margin: [10, 10, 0, 0], // Margen superior, derecho, inferior, izquierdo (en puntos).
-                                    headerRows: 1,
-                                    text: ""
-                                },
-                               
-                            }
-                            ,
-                            {
-                                table: {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        [ "ejes", "birlos", "lubricacion", "suspension"],
+                                        [ "Ejes", "Birlos", "Lubricacion", "Suspension neumatica"],
                                         ...datos.map(row => [
                                             row.ejes,
                                             row.birlos,
@@ -171,12 +179,24 @@ function generarPDFconId(cotizacionId) {
                                     widths: ['*', '*', '*', '*'],
                                     headerRows: 1,
                                     body: [
-                                        ["portaplacas", "autoinflado", "portaloderas", "retractil"],
+                                        ["Porta placas", "Auto inflado", "Porta loderas", "Eje retractil"],
                                         ...datos.map(row => [
                                             row.portaplacas,
                                             row.autoinflado,
                                             row.portaloderas,
                                             row.retractil,
+                                        ])
+                                    ],
+                            }
+                            },
+                            {
+                                table: {
+                                    widths: ['*'],
+                                    headerRows: 1,
+                                    body: [
+                                        ["Precio total"],
+                                        ...datos.map(row => [
+                                            row.precio_total,
                                         ])
                                     ],
                             }
