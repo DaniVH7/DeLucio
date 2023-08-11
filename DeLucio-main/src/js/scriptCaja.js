@@ -1,3 +1,4 @@
+
 function actualizarRin() {
     var selectLlanta = document.getElementById("llantas");
     var selectRin = document.getElementById("rin");
@@ -5,11 +6,16 @@ function actualizarRin() {
     var llantaseleccionada = selectLlanta.value;
   
     selectRin.innerHTML = "";
-
-    var option = document.createElement("option");
-    option.value = llantaseleccionada;
-    option.textContent = llantaseleccionada;
-    selectRin.appendChild(option); // Changed from selectRinMedida to selectRin
+    
+    // Agregar opciones al elemento selectRin
+    if (llantaseleccionada === "8") {
+        var option = document.createElement("option");
+        option.value = "Rin 1";
+        option.textContent = "Rin 1";
+        selectRin.appendChild(option);
+    } else if (llantaseleccionada === "otro_valor") {
+        // Agregar otras opciones según sea necesario
+    }
 }
 
   // Cambio de Medida rin y llanta
@@ -268,7 +274,7 @@ const imagenLlanta = document.getElementById('llantaOculta');
 labelLlanta.addEventListener('click', () => {
    // Mostramos el SweetAlert con la 
    Swal.fire({
-       title: 'Guarda lateral',
+       title: 'Llantas',
        imageUrl: imagenLlanta.src,
        imageAlt: 'imagenLlanta',
        confirmButtonText: 'Cerrar',
