@@ -43,16 +43,13 @@
     <div class="form-container" id="opcion01">
         <form action="../src/php/caja.php" method="post">
             <table>
-                <tr>
+   
                     <tr>
-                        Datos personales:
-                    </tr>
-                    <tr>
-                        <input class="form" type="text" name="nombre" placeholder="Nombre completo">
-                        <input class="form" type="email" name="correo" placeholder="Correo electrónico">
-                        <input class="form" type="tel" name="telefono" placeholder="Número de teléfono">
-                    </tr>
-                </tr>
+                            Datos personales:
+                            <tr><input class="form" type="text" name="nombre" placeholder="Nombre completo"></tr>
+                            <tr><input class="form" type="email" name="correo" placeholder="Correo electrónico"></tr>
+                            <tr><input class="form" type="tel" name="telefono" placeholder="Número de teléfono"></tr>
+                </tr> 
                 <td><label>Modelo: </a></td>
                 <td>
                     <select required name="modelo" id="modeloSelect">
@@ -80,18 +77,31 @@
                     <td><label>Color:</a>
                     </td>
                     <td><input type="text" name="color"></td>
+                    <td><label class="style-label" id="mostrarForro">Forro: </a></td>
+                        <img id="forroOculto" style="display: none;" src="../src/alerts/forro.png" alt="Imagen">
+                        <td>
+                            <select required name="forro" style="width: 300px;">
+                            <option>Doble zoclo (delantero y trasero )en acero galvanizado A 12” de altura</option></select>
+                        </td>
                 </tr>
                 <td><label>Frente exterior: </a>
                 </td>
                 <td><select required name="frente_exterior">
                         <option>Hoja Frontal Exterior En Aluminio Calibre 18</option>
                     </select></td>
-                <td><label class="style-label" id="mostrarForro">Forro: </a></td>
-                <img id="forroOculto" style="display: none;" src="../src/alerts/forro.png" alt="Imagen">
-                <td>
-                    <select required name="forro" style="width: 300px;">
-                    <option>Doble zoclo (delantero y trasero )en acero galvanizado A 12” de altura</option></select>
-                </td>
+                    <td><label class="style-label" id="mostrarPaneles">Paneles:</a></td>
+                        <img id="panelesOculta" style="display: none;" src="../src/alerts/paneles.png" alt="Imagen">
+                        <td><select required name="paneles">
+                                <option>Fijos</option>
+                            </select>
+                            <label>Material</label>
+                            <select required name="material">
+                                <option></option>
+                                <option value="Composite">Composite</option>
+                                <option value="Hoja poste">Hoja poste</option>
+                        </td>
+                        
+                
 
                 </tr>
                 <tr>
@@ -99,17 +109,12 @@
                     <td><select required name="postes_verticales">
                             <option >6 Postes Tipo Sombrero De 2” Galvanizados.</option>
                         </select></td>
-                    <td><label class="style-label" id="mostrarPaneles">Paneles:</a></td>
-                    <img id="panelesOculta" style="display: none;" src="../src/alerts/paneles.png" alt="Imagen">
-                    <td><select required name="paneles">
-                            <option>Fijos</option>
-                        </select>
-                        <label>Material</label>
-                        <select required name="material">
-                            <option></option>
-                            <option value="Composite">Composite</option>
-                            <option value="Hoja poste">Hoja poste</option>
-                    </td>
+                        <td><label class="style-label" id="mostrarPerno">Perno rey: </a></td>
+                            <img id="pernoOculto" style="display: none;" src="../src/alerts/perno.png" alt="Imagen">
+                            <td><select required name="perno_rey">
+                                    <option>Perno rey de 1/4</option>
+                                </select> </td>
+                    
                 </tr>
                 <tr>
                     <td><label>Costado exterior y estructural: </a></td>
@@ -117,11 +122,12 @@
                             <option>Panel en lamina de aluminio calibre 18, poste logístico galvanizado.</option>
 
                         </select></td>
-                    <td><label class="style-label" id="mostrarPerno">Perno rey: </a></td>
-                    <img id="pernoOculto" style="display: none;" src="../src/alerts/perno.png" alt="Imagen">
-                    <td><select required name="perno_rey">
-                            <option>Perno rey de 1/4</option>
-                        </select> </td>
+                        <td><label class="style-label" id="mostrarPatines">Patines: </a></td>
+                            <img id="patinesOculto" style="display: none;" src="../src/alerts/patines.png" alt="Imagen">
+                            <td><select required name="patines">
+                                    <option>Un juego de 2 velocidades</option>
+                                </select></td>
+                    
 
 
                 </tr>
@@ -135,11 +141,10 @@
                             </option>
                            </select>
                     </td>
-                    <td><label class="style-label" id="mostrarPatines">Patines: </a></td>
-                    <img id="patinesOculto" style="display: none;" src="../src/alerts/patines.png" alt="Imagen">
-                    <td><select required name="patines">
-                            <option>Un juego de 2 velocidades</option>
-                        </select></td>
+                    <td><label>Ejes:</a></td>
+                        <td><select required name="ejes">
+                                    <option value="De 30,000 lbs, 77.5 pulgadas de Track">De 30,000 lbs, 77.5 pulgadas de Track</option>
+                            </select> </td>
 
 
                 </tr>
@@ -151,10 +156,13 @@
                             <option>Fabricado En Acero Al Carbón En placa de 1/4” y 3/16” engargolada para dar mayor rigidez, Travesaño Superior De Bajo Perfil, Postes Cuadrados Reforzados Con Ángulos En Las Esquinas Superiores.</option>
                         </select>
                     </td>
-                    <td><label>Ejes:</a></td>
-                        <td><select required name="ejes">
-                                    <option value="De 30,000 lbs, 77.5 pulgadas de Track">De 30,000 lbs, 77.5 pulgadas de Track</option>
-                            </select> </td>
+                    <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </a></td>
+                        <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
+                        <td><select required name="susp_neu">
+                                    <option>De 30,000 lbs tipo vantrax con suspensión integral Y componentes de deslizamiento de carro neumático en marca hendrickson®.
+                                    </option>
+                            </select></td>
+                    
 
 
                 </tr>
@@ -169,12 +177,13 @@
                             </option>
                         </select>
                     </td>
-                    <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </a></td>
-                        <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
-                        <td><select required name="susp_neu">
-                                    <option>De 30,000 lbs tipo vantrax con suspensión integral Y componentes de deslizamiento de carro neumático en marca hendrickson®.
-                                    </option>
-                            </select></td>
+                    <td><label class="style-label" id="mostrarLoderas">Loderas: </a></td>
+                    <img id="loderaOculta" style="display: none;" src="../src/alerts/portaloderas.png" alt="Imagen">
+                    <td><select required name="loderas">
+
+                            <option>Dos blancas con logotipo de nuestra empresa</option>
+                        </select></td>
+                    </td>
 
                 </tr>
                 <tr>
@@ -185,11 +194,9 @@
                             </option>
                         </select>
                     </td>
-                    <td><label class="style-label" id="mostrarLoderas">Loderas: </a></td>
-                    <img id="loderaOculta" style="display: none;" src="../src/alerts/portaloderas.png" alt="Imagen">
-                    <td><select required name="loderas">
-
-                            <option>Dos blancas con logotipo de nuestra empresa</option>
+                    <td><label>Frenos neumaticos: </a></td>
+                    <td><select required name="frenos_neu" style="width: 300px;">
+                            <option>Sistema ABS de acuerdo a la norma 035 y dot 121 la fmvss 121</option>
                         </select></td>
                     </td>
                 </tr>
@@ -198,17 +205,19 @@
                     <td><select required name="cargadores" style="width: 300px;">
                             <option>Viga Tipo Ipr De 4” En Acero Negro Con Capacidad De 80 000 Lbs Ubicadas A 8” Y 12” Centros</option>
                         </select></td>
-
-                    <td><label>Frenos neumaticos: </a></td>
-                    <td><select required name="frenos_neu" style="width: 300px;">
-                            <option>Sistema ABS de acuerdo a la norma 035 y dot 121 la fmvss 121</option>
-                        </select></td>
-                    </td>
+                        <td>
+                            <button class="submit-button" type="submit">Enviar Formulario</button>
+                        </td>
+                        <td>
+                            <button class="submit-button" type="reset">Limpiar</button>
+                        </td>
+                    
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarLlanta">Llantas: </a></td>
                     <img id="llantaOculta" style="display: none;" src="../src/alerts/llanta.png" alt="Imagen">
                     <td><select required name="llantas" id="llantas" onchange="actualizarRin()" style="width: 30px;">
+                        <option>asa</option>
                         <option value="8">8</option>
                         </select>
 
@@ -229,12 +238,10 @@
                         <label>Medida Rin</label>
                         <select required name="rin_medida" id="rin_medida">
                             <option></option>
-                        </select
+                        </select>
                     </td>
                     </td>
-                    <td>
-                        <button type="submit" value="Enviar este formulario">Enviar Formulario</button>
-                    </td>
+                    
                 </tr>
 
             </table>

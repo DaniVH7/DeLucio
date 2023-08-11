@@ -45,16 +45,13 @@
     <div class="form-container" id="opcion01">
         <form id="dolly" action="../src/php/dolly.php" method="post">
             <table>
+                
                 <tr>
-                    <tr>
                         Datos personales:
-                    </tr>
-                    <tr>
-                        <input class="form" type="text" name="nombre" placeholder="Nombre completo">
-                        <input class="form" type="email" name="correo" placeholder="Correo electrónico">
-                        <input class="form" type="tel" name="telefono" placeholder="Número de teléfono">
-                    </tr>
-                </tr>
+                        <tr><input class="form" type="text" name="nombre" placeholder="Nombre completo"></tr>
+                        <tr><input class="form" type="email" name="correo" placeholder="Correo electrónico"></tr>
+                        <tr><input class="form" type="tel" name="telefono" placeholder="Número de teléfono"></tr>
+                </tr>   
                 <td><label>Modelo: </a></td>
                 <td>
                     <select required name="modelo" id="modeloSelect">
@@ -264,7 +261,12 @@
                         </select>
                     </td>
                     </td>
-
+                    <td>
+                        <button class="submit-button" type="submit">Enviar Formulario</button>
+                    </td>
+                    <td>
+                        <button class="submit-button" type="reset">Limpiar</button>
+                    </td>
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarRin">Rin: </a></td>
@@ -277,10 +279,7 @@
                         <select required name="rin_medida" id="rin_medida"></select>
                     </td>
                     </td>
-                    <td>
-                            <button type="submit">Enviar</button>
-                        </form>
-                    </td>
+                    
                 </tr>
 
             </table>

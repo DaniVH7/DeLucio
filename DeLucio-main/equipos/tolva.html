@@ -124,6 +124,12 @@
                                 <option value="40 m3">40 m3</option>
                             </select>
                         </td>
+                        <td><label>No.ejes</label></td>
+                    <td><select required name="no_ejes" id="ejes" onchange="actualizarPatines()">
+                            <option></option>    
+                            <option>2</option>
+                            <option>3</option>
+                        </select> </td>
                 </tr>
                 <tr>
                     <td colspan="2">
@@ -132,15 +138,13 @@
                             <option></option>
                             <option>Frontal y trasera en 3 pulgadas con válvula check en cada terminal</option>
                         </select>
-                       
-                    
                     </td> 
-                    <td><label>No.ejes</label></td>
-                    <td><select required name="no_ejes" id="ejes" onchange="actualizarPatines()">
-                            <option></option>    
-                            <option>2</option>
-                            <option>3</option>
-                        </select> </td>                </tr>
+                    <td><label>Ejes: </label></td>
+                    <td><select required name="ejes">
+                        <option></option>    
+                        <option>De 30,000 lbs con 77.5 pulgadas de track</option>
+                        </select> </td>
+                        </tr>
                 
                         <tr>
                     
@@ -154,11 +158,12 @@
                                 <option>En 4 pulgadas por debajo de los ejes (con o sin placa de gancho de arrastre)
                                 </option>
                             </select></td>
-                    <td><label>Ejes: </label></td>
-                    <td><select required name="ejes">
-                        <option></option>    
-                        <option>De 30,000 lbs con 77.5 pulgadas de track</option>
-                        </select> </td>
+                    <td><label class="style-label" id="mostrarBirlo">Birlo: </label></td>
+                <img id="birloOculto" style="display: none;" src="../src/alerts/birlo.png" alt="Imagen">
+                <td>
+                    <select required name="birlo" id="birlo"></select>
+                    <option></option>
+                </td>
 
                 </tr>
                 <tr><td><label class="style-label" id="mostrarLlanta">Llantas: </label></td>
@@ -176,11 +181,14 @@
                             <option value="11R24.5">11R24.5</option>
                         </select>
                     </td>
-                    <td><label class="style-label" id="mostrarBirlo">Birlo: </label></td>
-                <img id="birloOculto" style="display: none;" src="../src/alerts/birlo.png" alt="Imagen">
+                    <td><label class="style-label" id="mostrarLub">Lubricacion</label></td>
+                <img id="lubOculto" style="display: none;" src="../src/alerts/lub.png" alt="Imagen">
                 <td>
-                    <select required name="birlo" id="birlo"></select>
-                    <option></option>
+                    <select required name="lubricacion">
+                        <option></option>
+                        <option>Grasa</option>
+                        <option>Aceite</option>
+                    </select>
                 </td>
                 </tr>
                 <tr>
@@ -194,28 +202,8 @@
                         <select required name="rin_medida" id="rin_medida">
                             <option></option>
                         </select>
-                        <td><label class="style-label" id="mostrarLub">Lubricacion</label></td>
-                <img id="lubOculto" style="display: none;" src="../src/alerts/lub.png" alt="Imagen">
-                <td>
-                    <select required name="lubricacion">
-                        <option></option>
-                        <option>Grasa</option>
-                        <option>Aceite</option>
-                    </select>
-                </td>
-                    
-                </tr>
-                
-                <tr>
-                    <td><label class="style-label" id="mostrarMaterial">Material rin: </label></td>
-                    <img id="materialOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
-                  <td>
-                        <select required name="material_rin" id="material" onchange="actualizarBirlo()">
-                            <option></option>
-                            <option value="Acero">Acero</option>
-                            <option value="Aluminio">Aluminio</option>
-                        </select>
-                        <td><label class="style-label" id="mostrarRetractil">Eje retractil: </label></td>
+                    </td>
+                    <td><label class="style-label" id="mostrarRetractil">Eje retractil: </label></td>
                         <img id="retractilOculto" style="display: none;" src="../src/alerts/retractil.jpg" alt="Imagen">
                      <td>
                             <select required name="eje_retractil">
@@ -231,7 +219,27 @@
                             </select>
                         </td>
                     </td>
-                    
+                </tr>
+                
+                <tr>
+                    <td><label class="style-label" id="mostrarMaterial">Material rin: </label></td>
+                    <img id="materialOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                  <td>
+                        <select required name="material_rin" id="material" onchange="actualizarBirlo()">
+                            <option></option>
+                            <option value="Acero">Acero</option>
+                            <option value="Aluminio">Aluminio</option>
+                        </select>
+                    </td>
+                    <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </label></td>
+                    <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
+                    <td>
+                        <select required name="susp_neu" style="width: 315px;">
+                            <option></option>
+                            <option value="Azteca King Ak-300 de 30,000 lbs de capacidad">Azteca King Ak-300 de 30,000
+                                lbs de capacidad</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarPatines">Patines de Estacionamiento: </label></td>
@@ -241,15 +249,13 @@
                         <option>1 juego de patines</option>
                             <option>2 juegos de patines</option>
                         </select>
-                        <td><label class="style-label" id="mostrarSusp">Suspension neumatica: </label></td>
-                    <img id="suspOculto" style="display: none;" src="../src/alerts/susp.png" alt="Imagen">
-                    <td>
-                        <select required name="susp_neu" style="width: 315px;">
-                            <option></option>
-                            <option value="Azteca King Ak-300 de 30,000 lbs de capacidad">Azteca King Ak-300 de 30,000
-                                lbs de capacidad</option>
-                        </select>
+                        
                     </td>
+                    <td><label>Frenos neumaticos: </label></td>
+                    <td><select required name="frenos_neu">
+                        <option></option>    
+                        <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
+                        </select></td>
                     </td>
                 </tr>
                 <tr>
@@ -274,12 +280,14 @@
                             </option>
 
                         </select></td>
-                    <td><label>Frenos neumaticos: </label></td>
-                    <td><select required name="frenos_neu">
-                        <option></option>    
-                        <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
-                        </select></td>
-                    </td>
+                    <td><label class="style-label" id="mostrarGuarda">Guarda lateral: </label></td>
+                        <img id="guardaOculto" style="display: none;" src="../src/alerts/guarda.png" alt="Imagen">
+                       <td>
+                            <select required name="guarda">
+                                <option></option>
+                                <option>Si</option>
+                            </select>
+                        </td>
                     </td>
 
                     
@@ -293,16 +301,17 @@
                         <option>Tipo cinturon</option>
                             <option>Cadena</option>
                         </select>
-                        <td><label class="style-label" id="mostrarGuarda">Guarda lateral: </label></td>
-                        <img id="guardaOculto" style="display: none;" src="../src/alerts/guarda.png" alt="Imagen">
-                       <td>
-                            <select required name="guarda">
-                                <option></option>
-                                <option>Si</option>
-                            </select>
-                        </td>
+                        
                     </td>
-
+<td><label class="style-label" id="mostrarInflado">Auto inflado: </label></td>
+                        <img id="infladoOculto" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
+                <td>
+                        <select required name="auto_inflado">
+                            <option></option>
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarPrecaucion">Letrero de precaucion: </label></td>
@@ -312,22 +321,13 @@
                         <option>Si</option>
                             <option>No</option>
                         </select>
-                        <td><label class="style-label" id="mostrarInflado">Auto inflado: </label></td>
-                        <img id="infladoOculto" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
-                <td>
-                        <select required name="auto_inflado">
-                            <option></option>
-                            <option>Si</option>
-                            <option>No</option>
-                        </select>
+                        
+                </td><td>
+                        <button class="submit-button" type="submit">Enviar</button>
                     </td>
-                </td>
-                <tr>
                     <td>
-                        <button type="submit">Enviar</button>
-                    </td>
-                </tr>
-                
+                    <button class="submit-button" type="reset">Limpiar</button>
+                </td>   
             </table>
         </form>
     </div>

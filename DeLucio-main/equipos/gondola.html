@@ -234,18 +234,7 @@
                         <select required name="rin_medida" id="rin_medida">
                             <option></option>
                         </select>
-                    
-                </tr>
-                <tr>
-                    <td><label class="style-label" id="mostrarMaterial">Material rin: </label></td>
-                    <img id="materialOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
-                  <td>
-                        <select required name="material_rin" id="material" onchange="actualizarBirlo()">
-                            <option></option>
-                            <option value="Acero">Acero</option>
-                            <option value="Aluminio">Aluminio</option>
-                        </select>
-                        <td><label class="style-label" id="mostrarRetractil">Eje retractil: </label></td>
+                     <td><label class="style-label" id="mostrarRetractil">Eje retractil: </label></td>
                         <img id="retractilOculto" style="display: none;" src="../src/alerts/retractil.jpg" alt="Imagen">
                      <td>
                             <select required name="eje_retractil">
@@ -260,8 +249,25 @@
                                 <option>UBL</option>
                             </select>
                         </td>
+                
+                </tr>
+                <tr>
+                    <td><label class="style-label" id="mostrarMaterial">Material rin: </label></td>
+                    <img id="materialOculto" style="display: none;" src="../src/alerts/rines.png" alt="Imagen">
+                  <td>
+                        <select required name="material_rin" id="material" onchange="actualizarBirlo()">
+                            <option></option>
+                            <option value="Acero">Acero</option>
+                            <option value="Aluminio">Aluminio</option>
+                        </select>
+                       
                     </td>
-                    
+                    <td><label>Frenos neumaticos: </label></td>
+                    <td><select required name="frenos_neu">
+                        <option></option>    
+                        <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
+                        </select></td>
+                    </td>
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarBirlo">birlo: </label></td>
@@ -272,12 +278,14 @@
                             <option></option>
                         </select>
                     </td>
-                    <td><label>Frenos neumaticos: </label></td>
-                    <td><select required name="frenos_neu">
-                        <option></option>    
-                        <option>Sistema ABS - 2S1M de acuerdo a SCT</option>
-                        </select></td>
-                    </td>
+                    <td><label class="style-label" id="mostrarGuarda">Guarda lateral: </label></td>
+                        <img id="guardaOculto" style="display: none;" src="../src/alerts/guarda.png" alt="Imagen">
+                       <td>
+                            <select required name="guarda">
+                                <option></option>
+                                <option>Si</option>
+                            </select>
+                        </td>
                     </td>
 
                     
@@ -292,16 +300,17 @@
                             <option>Interior</option>
                             <option>Entre vigas</option>
                         </select>
-                        <td><label class="style-label" id="mostrarGuarda">Guarda lateral: </label></td>
-                        <img id="guardaOculto" style="display: none;" src="../src/alerts/guarda.png" alt="Imagen">
-                       <td>
-                            <select required name="guarda">
-                                <option></option>
-                                <option>Si</option>
-                            </select>
-                        </td>
+                        
                     </td>
-
+<td><label class="style-label" id="mostrarInflado">Auto inflado: </label></td>
+                        <img id="infladoOculto" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
+                <td>
+                        <select required name="auto_inflado">
+                            <option></option>
+                            <option>Si</option>
+                            <option>No</option>
+                        </select>
+                    </td>
                 </tr>
                 <tr>
                     <td><label class="style-label" id="mostrarPrecaucion">Letrero de precaucion: </label></td>
@@ -311,23 +320,15 @@
                         <option>Si</option>
                             <option>No</option>
                         </select>
-                        <td><label class="style-label" id="mostrarInflado">Auto inflado: </label></td>
-                        <img id="infladoOculto" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
-                <td>
-                        <select required name="auto_inflado">
-                            <option></option>
-                            <option>Si</option>
-                            <option>No</option>
-                        </select>
-                    </td>
+                        
                 </td>
-                <tr>
-                    <td>
-                        <button type="submit">Enviar</button>
-                        <button type="reset">Borrar</button>
-                    </td>
-                </tr>
-                
+
+                <td>
+                    <button class="submit-button" type="submit">Enviar Formulario</button>
+                </td>
+                <td>
+                    <button class="submit-button" type="reset">Limpiar</button>
+                </td>
             </table>
         </form>
     </div>
