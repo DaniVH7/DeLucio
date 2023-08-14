@@ -38,6 +38,17 @@
     });
 </script>
 <script>
+    // Aquí colocaremos el código para mostrar la alerta al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+      Swal.fire({
+        title: '¡Hola!',
+        text: '¡Para visualizar la imagen del elemento que desees, da click en su nombre!',
+        icon: 'info',
+        confirmButtonText: '¡Entendido!'
+      });
+    });
+  </script>
+<script>
     function abrirArchivo() {
         // Obtener el elemento select
         const selectElement = document.getElementById("selectFormulario");

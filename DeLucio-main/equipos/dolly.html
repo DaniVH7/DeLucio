@@ -23,7 +23,17 @@
         window.location.href = selectedValue;
     }
 </script>
-
+<script>
+    // Aquí colocaremos el código para mostrar la alerta al cargar la página
+    document.addEventListener("DOMContentLoaded", function() {
+      Swal.fire({
+        title: '¡Hola!',
+        text: '¡Para visualizar la imagen del elemento que desees, da click en su nombre!',
+        icon: 'info',
+        confirmButtonText: '¡Entendido!'
+      });
+    });
+  </script>
 <body>
     <header>
     <div class="escoge">
@@ -103,8 +113,8 @@
 
                             <option value="2.60 m" data-precio="200">2.60 m</option>
                         </select></td>
-                    <td><label class="style-label" id="mostrarEjes">Ejes:</a></td>
-                    <img id="ejesOculta" style="display: none;" src="../src/alerts/" alt="Imagen">
+                    <td><label  id="mostrarEjes">Ejes:</a></td>
+                    <img style="display: none;" alt="Imagen">
                     <td><select required name="ejes">
                             <option></option>
                             <option value="De 30,000 lbs, 77.5 pulgadas de Track">De 30,000 lbs, 77.5 pulgadas de Track</option>
@@ -161,7 +171,7 @@
 
                 </tr>
                 <tr>
-                    <td><label class="style-label" id="mostrarLanza">Largo de lanza: </a></td>
+                    <td><label id="mostrarLanza">Largo de lanza: </a></td>
                     <img id="lanzaOculta" style="display: none;" src="../src/alerts/" alt="Imagen">
                     <td>
                         <select required name="largo_lanza">
@@ -198,7 +208,7 @@
                         </select>
                     </td>
                     <td><label class="style-label" id="mostrarInflado">Auto inflado: </a></td>
-                    <img id="placasOculta" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
+                    <img id="infladoOculta" style="display: none;" src="../src/alerts/autoinflado.png" alt="Imagen">
                     <td>
                         <select required name="auto_inflado">
                             <option></option>
