@@ -280,8 +280,9 @@ CREATE TABLE tolva (
 
 CREATE TABLE usuarios (
   id_usuario int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  nombre varchar(100) NOT NULL,
+  username varchar(100) NOT NULL,
   correo varchar(250) NOT NULL,
-  password varchar(250) NOT NULL
+  pass varchar(250) NOT NULL
 ) ;
 
+INSERT INTO usuarios (username, correo, pass) VALUES ('admin', 'admin@email.com', '0192023a7bbd73250516f069df18b500');
