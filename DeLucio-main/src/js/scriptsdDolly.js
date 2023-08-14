@@ -97,7 +97,7 @@ function actualizarMedidaplana() {
          imageAlt: 'Imagen',
          confirmButtonText: 'Cerrar',
          padding: '3em',
-         color: '#c3c3c3',
+
          backdrop: `
            rgba(0,0,123,0.4)
            url("/src/img/logo.png)         `
@@ -117,7 +117,7 @@ function actualizarMedidaplana() {
          imageAlt: 'imagenBirlo',
          confirmButtonText: 'Cerrar',
          padding: '3em',
-         color: '#c3c3c3',
+
          backdrop: `
            rgba(0,0,123,0.4)
            url("/src/img/logo.png)         `
@@ -137,7 +137,7 @@ function actualizarMedidaplana() {
          imageAlt: 'imagenLub',
          confirmButtonText: 'Cerrar',
          padding: '3em',
-         color: '#c3c3c3',
+
          backdrop: `
            rgba(0,0,123,0.4)
            url("/src/img/logo.png)         `
@@ -156,7 +156,7 @@ function actualizarMedidaplana() {
          imageAlt: 'imagenSusp',
          confirmButtonText: 'Cerrar',
          padding: '3em',
-         color: '#c3c3c3',
+
          backdrop: `
            rgba(0,0,123,0.4)
            url("/src/img/logo.png)`
@@ -174,7 +174,6 @@ labelPlacas.addEventListener('click', () => {
         imageAlt: 'imagenBirlo',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -193,7 +192,6 @@ labelInflado.addEventListener('click', () => {
         imageAlt: 'imagenBirlo',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -211,7 +209,6 @@ labelLoderas.addEventListener('click', () => {
         imageAlt: 'imagenBirlo',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -229,7 +226,6 @@ labelRetractil.addEventListener('click', () => {
         imageAlt: 'imagenBirlo',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -247,7 +243,6 @@ labelEjes.addEventListener('click', () => {
         imageAlt: 'imagenEjes',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -267,7 +262,6 @@ labelOjillo.addEventListener('click', () => {
         imageAlt: 'imagenOjillo',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -286,7 +280,6 @@ labelLanza.addEventListener('click', () => {
         imageAlt: 'imagenLanza',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -305,7 +298,6 @@ labelQuinta.addEventListener('click', () => {
         imageAlt: 'imagenQuinta',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -323,7 +315,6 @@ labelLanta.addEventListener('click', () => {
         imageAlt: 'imagenLlanta',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
@@ -343,7 +334,6 @@ labelRin.addEventListener('click', () => {
         imageAlt: 'imagenRin',
         confirmButtonText: 'Cerrar',
         padding: '3em',
-        color: '#c3c3c3',
         backdrop: `
           rgba(0,0,123,0.4)
           url("/src/img/logo.png)`
