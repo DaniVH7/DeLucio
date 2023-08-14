@@ -15,7 +15,7 @@
                 $numRegistros = $sentenciaPrep->rowCount();
                 if ($numRegistros !=0)
                 {
-                    header("Location:../../admin/redirect.html");                    exit;
+                    header("Location:../../admin/redirect.php");                    exit;
                 } else {
                     echo "<script>alert('El usuario o contraseña son incorrectos.');</script>";
                     echo "<script>window.location.href = '../../admin/inciarSesion.html';</script>";
